@@ -1,0 +1,1464 @@
+مرحبًا بك في CS229 Machine Learning.|Welcome to CS229 Machine Learning.
+أه بعضكم يعلم أن هذا الفصل قد تم تدريسه في ستانفورد لفترة طويلة.|Uh, some of you know that this class has been taught at Stanford for a long time.
+وغالبًا ما تكون هذه هي الدورة|And this is often the course that, um,
+التي أتطلع إلى تدريسها كل عام لأن هذا هو المكان الذي ساعدنا فيه على ما أعتقد ، حيث أصبح|I most look forward to teaching each year because this is where we've helped I think,
+العديد من أجيال طلاب جامعة ستانفورد خبراء في التعلم الآلي ، واستمروا في بناء|several generations of Stanford students become experts in machine learning, go on to build
+العديد من منتجاتهم وخدماتهم  والشركات الناشئة التي أنا|many of their products and services and startups that I'm
+متأكد من أن العديد منكم يستخدمونها مسبقًا أو يستخدمونها جميعًا ، أه ، أه ، اليوم.|sure many of you are pre- or all of you are using, uh, uh, today.
+حسنًا ، ما أريد فعله اليوم هو قضاء بعض الوقت في الحديث ، آه ، اللوجستيات ،|Um, so what I want to do today was spend some time talking over, uh, logistics,
+ثم ، آه ، اقض بعض الوقت ، كما تعلم ،|and then, uh, spend some time, you know,
+أعطيك بداية مقدمة ،|giving you a beginning of a intro,
+تحدث قليلاً عن التعلم الآلي.|talk a little bit about machine learning.
+حوالي 229.|So about 229.
+أم ، كما تعلمون ،|Um, you know,
+لقد كنتم جميعًا تقرأون عن الذكاء الاصطناعي في الأخبار ،|all of you have been reading about AI in the news,
+أه ، حول التعلم الآلي في الأخبار.|uh, about machine learning in the news.
+اممم ، وربما سمعتني أو سمعت آخرين يقولون ، الذكاء الاصطناعي هو الكهرباء الجديدة.|Um, and you probably heard me or others say, AI is the new electricity.
+أه ظهور الكهرباء وصعودها منذ حوالي مائة عام أحدث|Uh, the emergence and rise of electricity about 100 years ago,
+تحولاً في كل صناعة كبرى.|it transformed every major industry.
+أعتقد أن الذكاء الاصطناعي الذي نسميه بالفعل التعلم الآلي بالنسبة لبقية العالم يبدو أنه يطلق عليه اسم الذكاء الاصطناعي.|I think AI already we call machine learning for the rest of the world seems to call AI.
+[ضوضاء]|[NOISE]
+إن التعلم الآلي|Um, machine learning and,
+و الذكاء الاصطناعي والتعلم العميق سيغيران العالم.|and AI and deep learning will change the world.
+وآمل أنه من خلال 229 ،|And I hope that through 229,
+سنعطيك الأدوات التي تحتاجها حتى تتمكن من أن تكون العديد من|we'll give you the tools you need so that you can be many of
+عمالقة الصناعات هؤلاء في المستقبل بحيث يمكنك أن تكون واحدًا لتقوم ببنائه ،|these future titans of industries that you can be one to go out and build,
+كما تعلم ، وتساعد شركات التكنولوجيا الكبيرة على القيام بالأمور المذهلة  أشياء يفعلونها ،|you know, help the large tech companies do the amazing things they do,
+أو يبنون شركتك الناشئة الخاصة بك ،|or build your own start-up,
+أو يدخلون في صناعة أخرى.|or go into some other industry.
+اذهب أو اذهب لتغيير الرعاية الصحية أو اذهب|Go, go transform healthcare or go
+لتغيير وسائل النقل أو اصنع سيارة ذاتية القيادة.|transform transportation or go build a self-driving car.
+اممم ، وافعل كل هذه الأشياء التي|Um, and do all of these things that,
+، بعد هذا الفصل ،|um, after this class,
+أعتقد أنك ستتمكن من القيام بها.|I think you'll be able to do.
+كما تعلمون ، فإن غالبية الطلاب الذين يزودون|You know, um, the majority of students supplying- the,
+- الطلب على مهارات الذكاء الاصطناعي - فإن الطلب على مهارات التعلم الآلي كبير جدًا.|the demand for AI skills- the demand for machine learning skills is so vast.
+أعتقد أنكم جميعًا تعرفون ذلك.|I think you all know that.
+أممم ، وأعتقد أنه بسبب تقدم التعلم الآلي|Um, and I think it's because machine learning has advanced
+بسرعة كبيرة في السنوات القليلة الماضية ، هناك الكثير من الفرص|so rapidly in the last few years that there are so many opportunities,
+لتطبيق خوارزميات التعلم ، أليس كذلك؟|um, to apply the learning algorithms, right?
+سواء في الصناعة أو في الأوساط الأكاديمية.|Both in industry as well as in academia.
+أعتقد أن لدينا اليوم|I think today, we have, um,
+أساتذة قسم اللغة الإنجليزية يحاولون|the English department professors trying to
+تطبيق خوارزميات التعلم لفهم التاريخ بشكل أفضل.|apply learning algorithms to understand history better.
+أه ، لدينا محامون يحاولون تطبيق التعلم الآلي في|Uh, we have lawyers trying to apply machine learning into
+معالجة المستندات القانونية وخارج الحرم الجامعي ، كل شركة ،|process legal documents and off-campus, every company,
+سواء شركات التكنولوجيا وكذلك الكثير من|both the tech companies as well as lots of
+الشركات الأخرى التي لن تفكر فيها بشركات التكنولوجيا ،|other companies that you wouldn't consider tech companies,
+كل شيء من شركات التصنيع إلى شركات الرعاية الصحية  ،|everything from manufacturing companies, to healthcare companies,
+لشركات الخدمات اللوجستية تحاول أيضًا تطبيق التعلم الآلي.|to logistics companies are also trying to apply machine learning.
+لذا أعتقد أنه ،|So I think that, um, uh, uh,
+إذا نظرت إليها على أساس واقعي ،|if you look at it on a- on a factual basis,
+فإن عدد الأشخاص الذين يقومون|the number of people doing
+بمشروعات تعلم الآلة القيمة للغاية اليوم أكبر بكثير مما كان عليه قبل ستة أشهر.|very valuable machine learning projects today is much greater than it was six months ago.
+وكان قبل ستة أشهر أكبر بكثير مما كان عليه قبل 12 شهرًا.|And six months ago is much greater than it was 12 months ago.
+وكمية القيمة|And the amount of value,
+، وكمية العمل الهادف المثير الذي يتم إنجازه في التعلم الآلي|the amount of exciting meaningful work being done in machine learning is,
+، آخذ في الارتفاع بقوة.|is, is very strongly going up.
+أممم ، وأعتقد أنه نظرًا لارتفاع ، كما تعلمون|Um, and I think that given the rise of, you know, the,
+، كميات البيانات التي لدينا بالإضافة إلى أدوات التعلم الآلي الجديدة التي|the amounts of data we have as well as the new machine learning tools that we have,
+نمتلكها ، فسوف يمر وقت طويل قبل نفاد الفرص.|um, it will be a long time before we run out of opportunities.
+كما تعلم ، من قبل ، قبل أن يكون لدى المجتمع|You know, before, before society as
+ككل عدد كافٍ من الأشخاص الذين لديهم مجموعة مهارات التعلم الآلي.|a whole has enough people with the machine learning skill set.
+حسنًا ، ربما ، لا أعرف ،|Um, so just as maybe, I don't know,
+قبل 20 عامًا كان وقتًا جيدًا لبدء العمل على هذا الشيء على الإنترنت|20 years ago was a good time to start working on this Internet thing and
+وجميع الأشخاص الذين بدأوا العمل على الإنترنت مثل 20 عامًا لديهم وظائف رائعة.|all people that started working on the Internet like 20 years ago have fantastic careers.
+أعتقد أن اليوم هو وقت رائع للانتقال إلى التعلم الآلي ، آه ، و ،|I think today is a wonderful time to jump into machine learning, uh, and, and,
+وعدد- والفرص المتاحة لك|and the number of- and the opportunities for you to
+للقيام بأشياء فريدة لا يملكها أحد- لا أحد يفعلها ، أليس كذلك؟|do unique things that no one has- no one else is doing, right?
+فرصة الذهاب إلى شركة لوجستية|The opportunity for you to go to a logistics company and
+وإيجاد طريقة مثيرة لتطبيق التعلم الآلي أه|find that exciting way to apply machine learning, uh,
+ستكون عالية جدًا لأن هناك احتمالية|will be very high because chances are
+أن الشركة اللوجستية ليس لديها أحد حتى يعمل على هذا.|that logistic company has no one else even working on this.
+لأنه ، كما تعلم ، ربما لا يستطيعون - هم ،|Because, you know, they probably can't- they,
+قد لا يكونوا قادرين على توظيف طالب رائع في جامعة ستانفورد وهو خريج CS229 ، أليس كذلك؟|they may not be able to hire a fantastic Stanford student that's a graduate of CS229, right?
+لأنه لا يوجد الكثير من خريجي CS229 حولنا.|Because there just aren't a lot of CS229 graduates around.
+حسنًا ، ما أريد فعله اليوم هو|Um, so what I want to do today is,
+تقديم مقدمة سريعة تتحدث عن الخدمات اللوجستية.|um, do a quick intro talking about logistics.
+أممم ، وبعد ذلك ،|Um, and then uh, we'll,
+سنقضي النصف الثاني من اليوم ، كما تعلمون ، في|we'll spend the second half of the day, you know,
+تقديم نظرة عامة|giving an overview and,
+، ونتحدث أكثر قليلاً عن التعلم الآلي.|and talk a little bit more about machine learning.
+تمام؟  واه- أوه ، وأنا أعتذر.|Okay? And uh- oh, and I apologize.
+أنا - أعتقد أن ، آه ، هذه الغرفة ،|I- I think that, uh, this room,
+حسب تلك اللافتة هناك ، مقاعد ،|according to that sign there, seats,
+ما ، 300 وشيء من الطلاب.|what, 300 and something students.
+أه أعتقد - لدينا أه|Uh, I think- we have, uh,
+أه ليس مثل 800 شخص فقط مسجلون في هذا الفصل.|uh, like not quite 800 people enrolled in this class.
+[ضحك] أه إذا هناك أناس بالخارج|[LAUGHTER] Uh, so there are people outside, and,
+وكل الفصول|and all of the classes,
+أه مسجلة وبثت في SCPD.|uh, are recorded and broadcast in SCPD.
+أه هم عادةً- يتم توفير مقاطع الفيديو عادةً في نفس اليوم.|Uh, they usually- the videos are usually made available the same day.
+لذلك ، بالنسبة لأولئك الذين لا يستطيعون دخول الغرفة ، أعتذر.|So for those who they can't get into the room, my apologies.
+اممم ، - كانت هناك بعض السنوات ،|Um, the- there were some years, um,
+حيث واجهت مشكلة في الدخول إلى الغرفة ولكني سعيد [ضحك] لقد سمحوا لي بالدخول.|where even I had trouble getting into the room but I'm glad [LAUGHTER] they let me in.
+لكن ، لكني - ولكن ، ولكن آمل أن تتمكن من المشاهدة.|But, but I'm- but, but hopefully, you can watch.
+يمكنك مشاهدة كل هذه الأشياء عبر الإنترنت قريبًا.|You, you can watch all of these things online shortly.
+[غير مسموع].|[inaudible].
+حسنا أرى ذلك.  نعم.  نعم.  [ضحك] لا أعرف ،|Oh, I see. Yes. Yeah. [LAUGHTER] I don't know,
+الأمر معقد بعض الشيء.|it's a bit complicated.
+[ضحك] أجل.  شكرًا لك.|[LAUGHTER] Yeah. Thank you.
+أعتقد أنه بخير.  نعم.  I- أنا- حسنًا ، أجل.|I think it's okay. Yeah. I- I- okay, yeah.
+نعم.  ربما في الفصول القليلة التالية يمكنك الضغط على NTC واستخدامه.|Yeah. Maybe for the next few classes you can squeeze in and use the NTC.
+لذلك في الوقت الحالي ، قد يكون الأمر معقدًا للغاية.|So for now, it might be too complicated.
+تمام.  مقدمات سريعة جدًا ،|Okay. So quick intros, um,
+آه ، أنا آسف ، كان علي أن أقدم نفسي.  اسمي أندرو نغ.|uh, I'm sorry, I should have introduced myself. My name is Andrew Ng.
+[ضحك] أه ، أه ، وأردت أن أقدم|[LAUGHTER] Uh, uh, uh, and I wanted to introduce
+بعضًا من بقية أعضاء فريق التدريس أيضًا.|some of the rest of the teaching team as well.
+هناك منسق صف.|There's a class coordinator.
+لقد لعبت هذا الدور لسنوات عديدة حتى الآن وتساعد في|Um, she has been playing this role for many years now and helps
+الحفاظ على تشغيل القطارات في الوقت المحدد والتأكد من أن كل شيء في|keep the trains run on time and make sure that everything in
+الفصل يحدث عندما يفترض.|class happens when it's supposed to.
+آه ، آه ، لذا ، لذا يجب أن تكون أه- وبعد ذلك ، آه ،|Uh, uh, so, so, so should be uh- and then, uh,
+نحن سعداء بامتلاك-|we're thrilled to have-
+هل تريدون يا رفاق الوقوف؟|Do you guys want to stand up?
+أه عندنا مساعدو المديرون المساعدون|Uh, we have the co-head TAs,
+أه على التوالي طلاب دكتوراه يعملون معي.|uh, respectively are PhD students working with me.
+أه ، وبالتالي جلب الكثير من ، أم ، أه ،|Uh, and so bringing a lot of, um, uh,
+خبرة فنية ، أه ، خبرة فنية في|technical experience, uh, technical experience in
+التعلم الآلي بالإضافة إلى المعرفة العملية حول كيفية جعل هذه الأشياء تعمل بالفعل.|machine learning as well as practical know-how on how to actually make these things work.
+ومع الصف الكبير الذي لدينا ،|And with the large class that we have,
+لدينا فريق كبير من TA.|we have a large TA team.
+اممم ، ربما لن أقدم جميع المشاركين هنا اليوم|Um, maybe I won't introduce all of the TAs here today
+ولكنك ستلتقي بالعديد منهم خلال هذه الدورة التدريبية هنا.|but you'll meet many of them throughout this course here.
+لكن خبرة TAs تشمل كل شيء من رؤية الكمبيوتر ومعالجة اللغة الطبيعية|But the TAs expertise span everything from computer vision and natural language processing,
+إلى البيولوجيا الحاسوبية والروبوتات.|to computational biology, to robotics.
+وهكذا ، أممم ، خلال هذا الربع|And so, um, through this quarter,
+، وأنت تعمل في مشاريع صفك ،|as you work on your class projects,
+أتمنى أن تحصل على الكثير من ، آه ،|I hope that you get a lot of, uh,
+المساعدة والمشورة والتوجيه من المساعدين ، أه ،|help and advice and mentoring from the TAs, uh,
+وجميعهم - وجميعهم ليس لديهم خبرة عميقة  فقط في|all of which- all of whom have deep expertise not just in
+التعلم الآلي ولكن غالبًا في منطقة تطبيق رأسية محددة ،|machine learning but often in a specific vertical application area,
+أم ، من التعلم الآلي.|um, of machine learning.
+بناءً على ما هو مشروعك ،|So depending on what your projects,
+حاولنا أن نطابقك مع TA الذي يمكن أن يقدم لك النصيحة ، أم ، إيه|we tried to match you to a TA that can give you advice, um, eh,
+، الأكثر صلة ، أه ،|the most relevant, uh,
+أيًا كان المشروع الذي تعمل عليه في النهاية.|whatever project you end up working on.
+حسنًا ، أجل ، هدف هذا الفصل ،|Um, so yeah, goal of this class,
+آمل أنه بعد الأسابيع العشرة القادمة|I hope that after the next 10 weeks,
+، ستكون خبيرًا في التعلم الآلي.|uh, you will be an expert in machine learning.
+اممم ، اتضح أنه ، آه ،|Um, it turns out that, uh,
+آه ، أنت تعرف ، أممم ،|uh, you know, um,
+و- وآمل أنه بعد هذا الفصل|and- and I hope that after this class,
+، ستكون قادرًا على الخروج وإنشاء تطبيقات مفيدة للغاية للتعلم الآلي ،|you'll be able to go out and build very meaningful machine learning applications,
+أه ، إما في بيئة أكاديمية حيث  أه|uh, either in an academic setting where, uh,
+أتمنى أن تطبقه على مشاكلك في الهندسة الميكانيكية|hopefully you can apply it to your problems in mechanical engineering,
+والهندسة الكهربائية وأه اللغة الإنجليزية والقانون وأم ، أه ،|electrical engineering, and, uh, English,
+|and law and, um, uh,
+و- و- والتعليم وكل هذا العمل الرائع الذي يحدث في الحرم الجامعي ،|and- and- and education and all of this wonderful work that happens on campus,
+أه  ، وكذلك بعد تخرجك من جامعة ستانفورد|uh, as well as after you graduate from Stanford
+لتتمكن من تطبيقها على أي وظيفة تجدها.|to be able to apply it to whatever jobs you find.
+من الأشياء التي أجدها مثيرة للغاية حول التعلم الآلي أنها لم|Um, one of the things I find very exciting about machine learning is that it's no
+تعد نوعًا من شركة التكنولوجيا البحتة فقط ، أليس كذلك؟|longer a sort of pure tech company only kind of thing, right?
+أعتقد أنه قبل سنوات|I think that many years ago,
+عديدة ، كان التعلم الآلي بمثابة شيء ، كما تعلمون ،|um, machine learning, it was like a thing that, you know,
+سيفعله قسم علوم الكمبيوتر|the computer science department would do and that
+وأن شركات الذكاء الاصطناعي النخبة مثل Google و Facebook و Baidu و Microsoft ستفعله.|the elite AI companies like Google and Facebook and Baidu and Microsoft would do.
+آه ، لكن الآن ، الأمر منتشر للغاية لدرجة أنه حتى الشركات|Uh, but now, it is so pervasive that even companies that are
+غير التقليدية لوجود شركات تكنولوجيا ترى حاجة كبيرة لتطبيق هذه الأدوات|not traditional because there are tech companies see a huge need to apply these tools,
+، وأجد الكثير من الأعمال الأكثر إثارة ، أه ، هذه الأيام.|and I find a lot of the most exciting work, uh, these days.
+اممم ، و ، وربما يعرف بعضكم أن تاريخي البعض سيكون متحيزًا ، أليس كذلك؟|Um, and, and, and maybe some of you guys know my history some would be biased, right?
+أنا - لقد قادت فريق Google Brain الذي ساعد Google على التحول|I- I led the Google Brain team which helped Google transform
+من شركة كانت بالفعل شركة رائعة قبل 10 سنوات إلى اليوم ،|from what was already a great company 10 years ago to today which is,
+كما تعلمون ، شركة ذكاء اصطناعي رائعة.|you know, a great AI company.
+ثم قادت أيضًا مجموعة الذكاء الاصطناعي في بايدو ،|And then I also led the AI group at Baidu,
+كما تعلمون ، قادت استراتيجية الشركة التكنولوجية لمساعدة بايدو.|and, you know, led the company's technology strategy to help Baidu.
+أيضًا ، تحولت من شركة كانت بالفعل شركة عظيمة|Also, it transformed from what was already a great company
+منذ سنوات عديدة إلى اليوم يمكن القول إنها أكبر شركة ذكاء اصطناعي في الصين.|many years ago to today arguably China's greatest AI company.
+لذا بعد أن قادت ، كما تعلمون ،|So having led the, you know,
+أسست الفرق التي قادت تحولات الذكاء الاصطناعي لشركتين كبيرتين من شركات التكنولوجيا|built the teams that led the AI transformations of two large tech companies,
+، أشعر أن هذا أمر رائع.|I, I, I feel like that's a great thing to do.
+أه ، ولكن حتى أبعد من التكنولوجيا ، أعتقد أن|Uh, but even beyond tech, I think that, um,
+هناك الكثير من العمل المثير الذي يجب القيام به أيضًا لمساعدة الصناعات الأخرى ،|there's a lot of exciting work to do as well to help other industries,
+لمساعدة القطاعات الأخرى ، آه ،|to help other sectors, uh,
+احتضان التعلم الآلي واستخدام هذه الأدوات بشكل فعال.|embrace machine learning and use these tools effectively.
+أممم ، ولكن بعد هذا الفصل ،|Um, but after this class,
+آمل أن يكون كل واحد منكم مؤهلاً جيدًا|I hope that each one of you will be well qualified to
+للحصول على وظيفة في شركة تكنولوجيا لامعة والقيام بالتعلم الآلي هناك ،|get a job at a shiny tech company and do machine learning there,
+أو الذهاب إلى إحدى هذه الصناعات الأخرى والقيام|or go into one of these other industries and do
+بمشاريع تعلم آلي قيّمة للغاية هناك.|very valuable machine learning projects there.
+أممم ، بالإضافة إلى ذلك ،|Um, and in addition,
+إذا كان أي منكم ، أم|if any of you, um,
+، يأخذ هذا الفصل بهدف أساسي هو ، أه ،|are taking this class with the primary goal of, uh,
+القدرة على إجراء بحث ،|being able to do research,
+أه ، في التعلم الآلي|uh, in machine learning,
+، لذا ، فاكتوا - لذلك أعلم أن بعضكم  طلاب الدكتوراه.|so, so, actua- so some of you I know are PhD students.
+أممم ، أتمنى أن يتركك هذا الفصل أيضًا مجهزًا جيدًا|Um, I hope that this class will also leave you well-equipped to,
+، ليتمكن من قراءة وفهم الأوراق البحثية ، أه ،|um, be able to read and understand research papers, uh,
+وكذلك أه ، كما تعلم ،|as well as, uh, you know,
+تكون مؤهلاً للبدء في المضي قدمًا ،|be qualified to start pushing forward,
+أم ،  الفن صحيح.|um, the state of the art, right.
+اممم ، لذلك دعونا نرى.|Um, so let's see.
+حسنًا ، اليوم ، آه|Um, so today, uh,
+، فكما أن التعلم الآلي يتطور بسرعة ،|so, so just as machine learning is evolving rapidly, um,
+فريق التدريس بأكمله ،|the whole teaching team,
+لقد قمنا باستمرار بتحديث CS229 أيضًا.|we've been constantly updating CS229 as well.
+لذا ، إنه أمر مثير للاهتمام حقًا.|So, um, it's actually very interesting.
+أشعر أن وتيرة التقدم في التعلم الآلي قد تسارعت ،|I feel like the pace of progress in machine learning has accelerated,
+لذلك ، يبدو الأمر كذلك ،|so it, it actually feels like that,
+آه ، لقد زادت المبالغ التي قمنا بتغيير الفصل الدراسي عامًا تلو الآخر بمرور الوقت.|uh, the amounts we changed the class year over year has been increasing over time.
+لذا ، بالنسبة لأصدقائك الذين التحقوا بالفصل العام الماضي ، كما تعلمون ، فإن|So- so for your friends who took the class last year, you know,
+الأمور مختلفة قليلاً هذا العام|things are a little bit different this year because
+لأننا نقوم بتحديث الفصل|we're, we're constantly updating the class
+باستمرار لمواكبة ما يبدو أنه لا يزال|to keep up with what feels like still
+يسرع التقدم في المجال بأكمله  التعلم الآلي.|accelerating progress in the whole field of machine learning.
+حسنًا ، إذن ، هناك بعض التغييرات اللوجستية.|Um, so, so, so, so there are some logistical changes.
+على سبيل المثال ، آه ، آه ، لقد انتقلنا من - آه ،|For example, uh, uh, we've gone from- uh,
+ما استخدمناه لتوزيع النسخ الورقية من النشرات ،|what we used to hand out paper copies of handouts,
+آه ، أننا نحاول جعل هذا الفصل رقميًا فقط.|uh, that we're, we're trying to make this class digital only.
+أه لكن دعني أتحدث قليلاً عن أه|Uh, but let me talk a little bit about, uh,
+المتطلبات الأساسية وكذلك في حال كان أصدقاؤك قد أخذوا هذا الفصل من قبل ،|prerequisites as well as in case your friends have taken this class before,
+بعض الاختلافات لهذا العام ، أليس كذلك؟|some of the differences for this year, right?
+أم ، المتطلبات الأساسية لذلك.|Um, so prerequisites.
+أم ، سنفترض أن|Um, we are going to assume that,
+لديكم جميعًا معرفة بمهارات ومبادئ الكمبيوتر الأساسية.|um, all of you have a knowledge of basic computer skills and principles.
+أه ، إذن ، كما تعلم ، تدوين Big O ،|Uh, so, you know, Big O notation,
+قوائم الانتظار ، الأكوام ، الأشجار الثنائية.|queues, stacks, binary trees.
+نأمل أن تفهم ما هي كل هذه المفاهيم.|Hopefully, you understand what all of those concepts are.
+و أه افترضوا أنكم جميعاً على دراية أساسية|And, uh, assume that all of you have a basic familiarity with,
+بأم أه احتمالية أليس كذلك؟|um, uh, probability, right?
+نأمل أن تعرف ما هو المتغير العشوائي ،|Hopefully, you know what's a random variable,
+ما هي القيمة المتوقعة للمتغير العشوائي ،|what's the expected value of a random variable,
+ما هو التباين في المتغير العشوائي.|what's the variance of a random variable.
+أممم ، وإذا - بالنسبة لبعضكم ،|Um, and if- for some of you,
+ربما خاصة طلاب SCPD الذين أخذوا هذا عن بعد ،|maybe especially the SCPD students taking this remotely,
+فقد مرت ، كما تعلمون ،|it has been, you know,
+بعض السنوات منذ آخر مرة حصلت فيها على فصل الاحتمالات والإحصاء.|some number of years since you last had a probability and statistics class.
+أه سيكون لدينا جلسات مراجعة أه|Uh, we will have review sessions, uh,
+، يوم ، يوم الجمعة ، أه|on, on, on Fridays, uh,
+حيث سنستعرض بعض هذه المواد الأساسية أيضًا.  لكن لا بأس.|where we'll go over some of this prerequisite material as well. But it's okay.
+نأمل أن تعرف ما هو المتغير العشوائي ،|Hopefully, you know what a random variable is,
+ما هي القيمة المتوقعة.|what expected value is.
+لكن إذا كنت غير واضح قليلاً بشأن هذه المفاهيم|But if you're a little bit fuzzy on those concepts,
+، فسنراجعها مرة أخرى ،|we'll go over them again,
+أم ، في a- في قسم المناقشة ، أه ، يوم الجمعة.|um, at a- at a discussion section, uh, on Friday.
+يبدو أيضًا أنه على دراية بالجبر الخطي الأساسي.|Also, seem to be familiar with basic linear algebra.
+لذا نأمل أن تعرف ما هي المصفوفة ،|So hopefully that you know what's a matrix,
+وما هو المتجه ، وكيفية ضرب مصفوفتين ومصفوفات ومتجه.|what's a vector, how to multiply two matrices and multiplying matrices and a vector.
+أم ، إذا كنت تعرف ما هو ناقل eigenvector ، فهذا أفضل.|Um, if you know what an eigenvector then that's even better.
+أه ، إذا لم تكن متأكدًا تمامًا من ماهية المتجه الذاتي ،|Uh, if you're not quite sure what an eigenvector is,
+فسنستعرض الأمر - أنك ، أنت ، أنت أفضل -|we'll go over it that- that you, you, you better-
+آه ، نعم ، سنقوم ، سوف نتجاوز الأمر على ما أعتقد  .|uh, yeah, we'll, we'll, we'll go over it I guess.
+ثم بعد ذلك جزء كبير من هذا الفصل أه أه هو|And then, um, a large part of this class, uh, uh, is,
+أم هل تمارس هذه الأفكار من خلال الواجبات المنزلية|um, having you practice these ideas through the homeworks,
+أه وكذلك أذكر لاحقًا أه مشروع مفتوح.|uh, as well as I mention later a, uh, open-ended project.
+وهكذا ، أم ، واحد ،|And so, um, one,
+أه ، هناك- في الواقع ، أه ،|uh, there are- we've actually, uh,
+حتى الآن اعتدنا استخدام أه MATLAB ،|until now we used to use uh MATLAB,
+أه وأوكتاف لمهام البرمجة ، أه ،|uh and Octave for the programming assignments, uh,
+ولكن هذا العام ، نحاول تغيير البرمجة  التعيينات لـ ، آه ،|but this year, we're trying to shift the programming assignments to, uh,
+بايثون ، أم ، وهكذا ،|Python, um, and so,
+أعتقد ، لفترة طويلة ، آه ،|um, I think for a long time, uh,
+حتى اليوم ، كما تعلمون ،|even today, you know,
+أحيانًا أستخدم Octave للنموذج الأولي لأن بناء الجملة في Octave لطيف جدًا ويتم تشغيله ،|I sometimes use Octave to prototype because the syntax in Octave is so nice and just run,
+كما تعلمون ،  تجارب بسيطة للغاية وبسرعة كبيرة.|you know, very simple experiments very quickly.
+لكنني أعتقد أن عالم التعلم الآلي ،|But I think the machine learning world, um, is,
+كما تعلمون ، يهاجر حقًا أعتقد من|you know, really migrating I think from a
+عالم MATLAB Python إلى زيادة - عفواً ،|MATLAB Python world to increasing- excuse me,
+عالم MATLAB Octave إلى Python بشكل متزايد|MATLAB Octave world to increasingly a Python
+، ثم في النهاية لإنتاج Java أو C ++ ، نوع  من العالم.|maybe and- and then eventually for production Java or C++, kind of world.
+وهكذا ، آه ، نحن نعيد كتابة الكثير من المهام|And so, uh, we're rewriting a lot of the assignments
+لهذا الفصل في هذا العام الدراسي.|for this class this school year.
+بعد قيادة هذه العملية ،|Having, having driving that process,
+أه ، لذلك - حتى تكون هذه الدورة ،|uh, so that- so that this course,
+أه ، يمكنك القيام بالمزيد من المهام.|uh, you could do more of the assignments.
+أه ، أه ، ربما معظم - ربما جميع المهام في ،|Uh, uh, maybe most- maybe all of the assignments in,
+أم ، بايثون ، أه ، NumPy بدلاً من ذلك.|um, Python, uh, NumPy instead.
+الآن ، ملاحظة حول قواعد|Um, now, a note on the honor codes,
+الشرف ، نحن نطلب ، كما تعلمون|um, we ask that, you know,
+، نحن نشجعك بالفعل على تشكيل مجموعات دراسية.|we, we actually encourage you to form study groups.
+أه لذا تعلمون أنني كنت مفتونًا بالتعليم منذ وقت طويل.|Uh, so, so you know I've been um, fascinated by education, a long time.
+لقد أمضيت وقتًا طويلاً في دراسة التعليم وعلم أصول التدريس وكيف يمكن للمدرسين|I spent a long time studying education and pedagogy and how instructors
+مثلنا المساعدة في دعم الشباب للتعلم بشكل أكثر كفاءة.|like us can help support youth to learn more efficiently.
+وأحد الدروس التي تعلمتها|And one of the lessons I've learned from
+من أدبيات البحث التربوي هو أن الفصول عالية التقنية مثل هذه ،|the educational research literature is that the highly technical classes like this,
+إذا قمت بتشكيل مجموعات دراسية ، أه ،|if you form study groups, uh,
+من المحتمل أن يكون لديك وقت أسهل ، أليس كذلك؟|you will probably have an easier time, right?
+لذا ، CS229 ، نختار المواد عالية التقنية.|So, so CS229, we go for the highly technical material.
+هناك الكثير من الرياضيات ، وبعض المشاكل صعبة وإذا كان لديك|There's a lot of math, some of the problems are hard and if you have
+مجموعة من الأصدقاء للدراسة معهم ،|a group of friends to study with, uh,
+فمن المحتمل أن يكون لديك وقت أسهل أه ،|you probably have an easier time uh, uh,
+لأنه يمكنك الآن طرح أسئلة على بعضكما والعمل معًا ومساعدة كل منهما  آخر.|because you can now ask each other questions and work together and help each other.
+أم ، حيث نطلب منك رسم الخط أو ما نطلب|Um, where we ask you to draw the line or what we ask
+منك القيام به ، بالنسبة إلى ستانفورد ،|you to, to, to do relative to Stanford's,
+أه ، مدونة الشرف ، أممم ،|uh, Honor Code is, um,
+نطلب منك حل مشاكل الواجب المنزلي بنفسك ، أليس كذلك؟|we ask that you do the homework problems by yourself, right?
+أه و ، و بالتحديد اممم ،|Uh, and, and, and most specifically, um,
+لا بأس في مناقشة مشاكل الواجبات المنزلية مع الأصدقاء ،|it's okay to discuss the homework problems with friends,
+لكن إذا كنت أنت ،|but if you, um,
+ولكن بعد مناقشة مشاكل الواجبات المنزلية مع الأصدقاء ،|but after discussing homework problems with friends,
+نطلب منك العودة وكتابة الحلول بنفسك ،  أه|we ask you to go back and write out the solutions by yourself, uh,
+بدون الرجوع إلى الملاحظات التي|without referring to notes that,
+تعلمون أنكم قد تطورتم وأصدقاؤكم معًا ، حسنًا؟|you know, you and your friends had developed together, okay?
+أممم ، رمز شرف الفصل مكتوب بوضوح|Um, the class's honor code is written clearly
+على نشرات الفصل المنشورة رقميًا على الموقع الإلكتروني.|on the class handouts posted digitally on the website.
+لذلك إذا كان لديك أي أسئلة حول ما|So if you ever have any questions about what
+هو مسموح بالتعاون وما هو غير مسموح به ،|is allowed collaboration and what isn't allowed, uh,
+فيرجى الرجوع إلى هذا المستند المكتوب على|please refer to that written document on
+موقع الدورة التدريبية حيث نصف هذا بشكل أكثر وضوحًا ، ولكن|the course website where we describe this more clearly, but,
+، احتراما لقانون شرف جامعة ستانفورد  بالإضافة إلى ،|um, out of respect for the Stanford honor code as well as for,
+أه ، أه ، أنت تعرف ، من|uh, uh, you know,
+أجل ، بالنسبة للطلاب ، نوعًا ما يقومون بعملهم الخاص ،|for, for, for students kind of doing their own work,
+طلبنا منك القيام بعملك الخاص بشكل أساسي ، آه ، من|we asked you to basically do your own work, uh,
+أجل - لا بأس بمناقشته ،|for the- it's okay to discuss it,
+ولكن بعد مناقشة الواجب المنزلي  مشاكل مع الأصدقاء ، في النهاية ،|but after discussing homework problems with friends, ultimately,
+نطلب منك كتابة مشاكلك بنفسك حتى|we ask you to write up your problems by yourself so that
+تعكس عمليات تقديم الواجبات المنزلية عملك ، أليس كذلك؟|the homework submissions reflect your own work, right?
+أممم ، وأنا أهتم بهذا لأنه اتضح أن وجود CS 229 ،|Um, and I care about this because it turns out that having CS 229,
+كما تعلمون ، CS 229 هو أحد تلك الفئات التي يتعرف عليها أصحاب العمل.|you know, CS 229 is one of those classes that employers recognize.
+أه - آه ، لا أعرف ما إذا كنتم تعلمون ،|Uh- uh, I don't know if you guys know,
+ولكن كانت هناك ، يا رفاق ،|but there have been, um,
+شركات عرضت إعلانات وظائف تقول أشياء مثل ،|companies that have put up job ads that say stuff like,
+"طالما أنك حصلت على - طالما أكملت|"So long as you've got- so long as you completed
+CS 229 نحن  تضمن حصولك على مقابلة ، "أليس كذلك؟|CS 229 we guarantee you get an interview," right?
+[ضحك] لقد رأيت أشياء من هذا القبيل.|[LAUGHTER] I've- I've seen stuff like that.
+ولذا أعتقد أنك تعلم من أجل الحفاظ|And so I think you know in order to, to maintain
+على قدسية ما يعنيه أن تكون مكملًا لـ CS 229 ،|that sanctity of what it means to be a CS 229 completer,
+أعتقد ، أممم ، وسأطلب منكم جميعًا - أن تقوموا بواجبكم المنزلي حقًا.|I think, um, and I'll ask all of you so that- really do your homework.
+أم ، أو ابق ضمن حدود|Um, or stay within the bounds of acceptable,
+التعاون المقبول والمقبول فيما يتعلق بقانون الشرف.|acceptable collaboration relative to the honor code.
+اممم ، دعنا نرى.|Um, let's see.
+وأعتقد أن أم ، آه ،|And I think that um, uh,
+إذا- آه ، أتعلم ماذا؟|if- uh, you know what?
+هذا ، أم ، [ضوضاء] نعم.|This is, um, [NOISE] yeah.
+وأعتقد أنه ، آه ،|And I think that, uh,
+أحد أفضل أجزاء CS 229 ،|one of the best parts of CS 229,
+اتضح أنه ، عذرا.|it turns out is, um, excuse me.
+لذلك أنا أحاول ، آسف ، سأحاول البحث عن مؤشر الماوس.|So I'm trying, sorry, I'm going to try looking for my mouse cursor.
+اه حسنا.  اسف بشأن ذلك.|Uh, all right. Sorry about that.
+لا يتم عكس شاشات العرض الخاصة بي.|My- my- my displays are not mirrored.
+لذلك هذا محرج بعض الشيء.|So this is a little bit awkward.
+حسنًا ، أحد أفضل أجزاء الفصل هو|Um, so one of the best parts of the class is- oh,
+التصوير.  اسف بشأن ذلك.|shoot. Sorry about that.
+[ضحك]|[LAUGHTER]
+حسنًا ، لا تهتم.  لن أفعل هذا.|All right, never mind. I won't do this.
+يمكنك القيام بذلك بنفسك على الإنترنت لاحقًا.|Um, you could do, you could do it yourself online later.
+نعم ، لقد بدأت في|Um, yeah, I started
+استخدام - لقد بدأت في استخدام Firefox مؤخرًا بالإضافة إلى Chrome هنا.  إنه مزيج.|using- I started using Firefox recently in addition to Chrome here. It's a mix up.
+أحد أفضل|Um, one of the best parts of, um,
+أجزاء الفصل هو مشروع الفصل الدراسي.|the class is, um, the class project.
+أممم ، وهكذا ، كما تعلم ، فإن|Um, and so, you know,
+أحد أهداف الفصل هو تركك|one of the goals of the class is to leave you
+مؤهلًا جيدًا للقيام بمشروع تعليمي آلي هادف.|well-qualified to do a meaningful machine learning project.
+وهكذا ، آه ، من أفضل الطرق للتأكد من أن لديك مجموعة المهارات|And so, uh, one of the best ways to make sure you have that skill set
+هذه من خلال هذه الفئة ونأمل أن يكون ذلك بمساعدة بعض الخبراء التقنيين لدينا.|is through this class and hopefully with the help of some of our TAs.
+أه ، نريد دعمك للعمل في|Uh, we wanna support you to work on
+مجموعة صغيرة لإكمال مشروع تعلُّم آلي هادف.|a small group to complete a meaningful machine learning project.
+حسنًا ، هناك شيء واحد أتمنى أن تبدأ به ، كما تعلم ،|Um, and so one thing I hope you start doing, you know,
+لاحقًا اليوم ، أه ، هو بدء العصف الذهني ربما مع أصدقائك.|later today, uh, is to start brainstorming maybe with your friends.
+حسنًا ، بعض من- بعض المشاريع الصفية التي قد تعمل عليها.|Um, some of the- some of the class projects you might work on.
+أه ، وأكثر مشاريع الفصل شيوعًا ، كما تعلم ،|Uh, and the most common class project that, you know,
+يفعله الأشخاص في CS 229 هو اختيار منطقة أو اختيار تطبيق يثيرك|people do in CS 229 is to pick an area or pick an application that excites you and
+وتطبيق التعلم الآلي عليه ومعرفة ما إذا كان بإمكانك|to apply machine learning to it and see if you can
+بناء نظام جيد للتعلم الآلي للبعض  منطقة التطبيق.|build a good machine learning system for some application area.
+وهكذا ، إذا ذهبت إلى موقع الدورة التدريبية ، كما تعلم ،|And so, um, if you go to the course website, you know,
+cs229.stanford.edu ونظرت إلى مشاريع العام السابق ، فلديك -|cs229.stanford.edu and look at previous year's projects,
+ترى مشروعات التعلم الآلي مطبقة إلى حد كبير ،|you ha- you, you see machine learning projects applied to pretty much,
+كما تعلمون ، إلى حد كبير كل ما يمكن تخيله  تطبيق تحت الشمس.|you know, pretty much every imaginable application under the sun.
+كل شيء من لا أعرف ،|Everything from I don't know,
+تشخيص السرطان إلى خلق الفن ، أه ،|diagnosing cancer to creating art to, uh,
+الكثير ، أم ، أه ، المشاريع المطبقة على مجالات أخرى من الهندسة ، أه ،|lots of, um, uh, projects applied to other areas of engineering, uh,
+التقدم إلى مجالات التطبيق في EE ،|applying to application areas in EE,
+أو الهندسة الميكانيكية ، أو الهندسة المدنية ،|or Mechanical engineering, or Civil engineering,
+أو  هندسة الزلازل ونحوها أه لتطبيقها|or Earthquake engineering, and so on, uh,
+لفهم|to applying it to understand literature,
+الأدب وتطبيقه على أم أه لا أعرف.|to applying it to um, uh, I don't know.
+و و و و و و وهكذا أه|And, and, and, and, and so, uh,
+إذا نظرتم إلى مشاريع السنة|if you look at the previous year's projects
+السابقة لكثير منها منشورة على موقع الدورة.|of many of which are posted on the course website.
+يمكنك استخدام ذلك كمصدر إلهام لمعرفة أنواع المشاريع التي يكملها الطلاب ،|You could use that as inspiration to see the types of projects students complete,
+وإتمام هذا الفصل الدراسي قادر على القيام به ، ويشجعك أيضًا على ذلك ، أم ، أه ،|completing this class are able to do and also encourage you to, um, uh,
+يمكنك إلقاء نظرة على ذلك للحصول على الإلهام للتعرف|you can look at that for inspiration to get
+على ما يمكنك القيام به  في|a sense of what you'll be able to do at the end-
+نهاية هذا الفصل الدراسي ومعرفة ما إذا كان النظر إلى|conclusion of this class and also see if looking at
+مشاريع العام السابق يمنحك|previous year's projects gives you inspiration for what,
+الإلهام لما قد تفعله بنفسك.|um, you might do yourself.
+أه ، لذلك طلبنا منك - نحن ، ندعوك أعتقد أن|Uh, so we asked you to- we, we invite you I guess to
+تقوم بمشاريع صفية في مجموعات صغيرة ، وهكذا ،|do class projects in small groups and so, um,
+بعد الفصل اليوم ، نشجعك أيضًا على البدء في|after class today, also encourage you to start
+تكوين صداقات في الفصل لغرض تكوين|making friends in the class both for the purpose of forming
+مجموعات دراسية مثل  وكذلك بغرض العثور|study groups as well as with the purpose of maybe finding
+على مجموعة صغيرة للقيام بمشروع دراسي معهم.|a small group to do a class project with.
+أم أه طلبنا منك تشكيل مجموعات مشاريع من|Um, uh, we asked you to form project groups of,
+أم حتى حجم ثلاثة.|um, up to size three.
+أه أه معظم مجموعات المشاريع ينتهي بها الأمر بحجم اثنين أو ثلاثة.|Uh, uh, most project groups end up being size two or three.
+اممم ، إذا كنت تصر على القيام بذلك بنفسك ، فمن|Um, if you insist on doing it by yourself,
+دون أي شركاء ، فلا بأس بذلك أيضًا.|right without any partners that's actually okay too.
+فنحن نرحب بك للقيام بذلك.|You're welcome to do that.
+لكن ، آه ، لكن - لكني أعتقد في كثير من الأحيان ، كما تعلمون ،|But, uh, but- but I think often, you know,
+أن وجود شخص أو اثنين آخرين للعمل معهم قد يمنحك وقتًا أسهل.|having one or two others to work with may give you an easier time.
+وبالنسبة للمشاريع ذات النطاق الاستثنائي ،|And for projects of exceptional scope,
+إذا كان لديك مشروع كبير جدًا ،|if you have a very very large project,
+فلا يمكن لثلاثة أشخاص القيام به.|that just cannot be done by three people.
+في بعض الأحيان ، كما|Um, uh, sometimes, you know,
+تعلم ، أخبرنا ، ونحن منفتحون على - مع ، مع بعض مجموعات المشاريع ذات الحجم الرابع ،|let us know and we're open to- with, with to some project groups of size four,
+لكن توقعاتنا - ولكن لدينا مشاريع ، كما تعلمون ،|but our expectation- but we do hold projects, you know,
+مع مجموعة من أربعة إلى  مستوى أعلى من المشاريع ذات الحجم من واحد إلى ثلاثة ، حسنًا.|with a group of four to a higher standard than projects with size one to three, okay.
+إذن ، ما يعنيه ذلك هو أنه إذا كان حجم فريق مشروعك واحدًا|So- so what that means is that if your project team size is one,
+أو شخصين أو ثلاثة ،|two or three persons,
+فإن الدرجات هي معيار واحد.|the grading is one criteria.
+إذا كانت مجموعة مشروعك أكبر من ثلاثة أشخاص ،|If your project group is bigger than three persons,
+فإننا نستخدم معايير أكثر صرامة عندما يتعلق الأمر بتصنيف المشاريع الصفية.|we use a stricter criteria when it comes to grading class projects.
+تمام.  أم ، وهذا يذكرني أم ،|Okay. Um, and that, that reminds me um,
+آه ، أعلم أن أه- لنرى.|uh, I know that uh- let's see.
+لذلك بالنسبة لمعظمكم منذ ذلك الحين - منذ أن بدأ هذا في|So for most of you since this- since this
+الساعة 9:30 صباحًا في اليوم الأول من الربع ،|started 9:30 AM on the first day of the quarter,
+آه ، بالنسبة للكثيرين منكم ،|uh, for many of you,
+قد يكون هذا - قد يكون هذا أول فصل دراسي لك في جامعة ستانفورد.|this may be- this may be your very first class at Stanford.
+كم منكم ، هذا هو أول فصل دراسي لك في جامعة ستانفورد؟|How many of you, this is your very first class at Stanford?
+رائع.  رائع.  تمام.  رائع.  رائعة.  مرحبًا بكم في ستانفورد.|Wow. Cool. Okay. Awesome. Great. Welcome to Stanford.
+[ضحك]|[LAUGHTER]
+آه ، وإذا قام شخص ما|Uh, and if someone next to
+بجوارك برفع يده - آه في الواقع ، راي - ارفع يدك مرة أخرى.|you just raise their hand- uh actually, rai- raise your hand again.
+لذلك آمل ، كما تعلمون ، ربما بعد الفصل اليوم ،|So I hope that, you know, maybe after class today,
+إذا قام شخص ما بجوارك برفع يده ، آه ،|if someone next to you raised a hand, uh,
+ساعد في الترحيب بهم في ستانفورد|help welcome them to Stanford, and
+، ثم قل مرحباً وقدم نفسك وتكوين صداقات في الطريق.|then, say hi and introduce yourself and make friends on the way.
+نعم.  رائع.  من الجميل أن أرى الكثير منكم هنا.|Yeah. Cool. Nice, nice to see so many of you here.
+ام.|Um.
+[ضوضاء]|[NOISE]
+حسنًا.  حسنًا ،|All right. So um,
+فقط أكثر قليلاً عن اللوجيستيات|just a bit more on logistics, uh-
+، أه- حسنًا ، دعنا نرى ،|So, um, let's see,
+بالإضافة إلى المحاضرات الرئيسية التي سنلقيها هنا ،|in addition to the main lectures that we'll have here,
+أه ، يومي الاثنين والأربعاء ،|uh, on Mondays and Wednesdays,
+أم ، CS229 بها أيضًا أقسام للمناقشة ، أه ،|um, CS229 also has discussion sections, uh,
+في  - يقام يوم الجمعة الذي - وكل ما نقوم به بما في ذلك -|on- held on Fridays that are- and everything we do including the- all the,
+جميع المحاضرات وأقسام المناقشة يتم تسجيلها وبثها عبر SCPD|all the lectures and discussion sections are recorded and broadcast through SCPD,
+أه عبر المواقع الإلكترونية.|uh, through the online websites.
+أم وأحد|Um, and one of- and,
+وأه أقسام المناقشة يتم تدريسها|uh, discussion sections are taught,
+أه عادة من قبل المدراء الفنيون أيام الجمعة ويكون الحضور في أقسام المناقشة اختياريًا.|uh, usually by the TAs on Fridays and attendance at discussion sections is optional.
+أه ، وما أعنيه هو أن ، أنت - كما تعلم ،|Uh, and what I mean is that, um, you- you know,
+أعدك بنسبة 100٪ ،|you- 100% promise,
+لن تكون هناك مواد في منتصف المدة ستتسلل من هذا النوع من الأقسام.|there won't be material on the midterm that will sneak in from this kind of section.
+لذلك فهو اختياري بنسبة 100٪.|So it's 100% optional.
+أه وستتمكن من أداء جميع الواجبات|Uh, and you will be able to do all the homework and
+والمشاريع دون حضور قسم المناقشة.|the projects without attending the discussion section.
+لكن ما سنستخدمه قسم المناقشة من أجل|But what we'll use the discussion section for,
+أه لأقسام المناقشة الثلاثة الأولى.|uh, for the first three discussion sections.
+لذا ، كما تعلمون ، هذا الأسبوع ، الأسبوع المقبل ، آه ، الأسبوع الذي يلي ذلك ،|So, you know, this week, next week, uh, the week after that,
+سنستخدم أقسام المناقشة لاستعراض المواد الأساسية بمزيد من العمق.|we'll use the discussion sections to go over prerequisite material in greater depth.
+لذا ، آه ، انتقل ، آه ،|So, uh, go over, uh,
+الجبر الخطي ، إحصائيات الاحتمالات الأساسية ،|linear algebra, basic probability statistics,
+علم قليلاً عن Python NumPy في|teach a little bit about Python NumPy in
+حال كنت أقل دراية بهذه الأطر.|case you're less familiar with those frameworks.
+أه ، لذا سنفعل ذلك في الأسابيع القليلة الأولى.|Uh, so we'll do that for the first few weeks.
+ثم بالنسبة لأقسام المناقشة التي ستعقد في وقت لاحق من هذا الربع ،|And then for the discussion sections that are held later this quarter,
+سنستخدمها عادةً لاستعراض المزيد من المواد الاختيارية المتقدمة.|we'll usually use them to go over more advanced optional material.
+آه ، على سبيل المثال ، um ،|Uh, for example, um,
+CS229 ، معظم خوارزميات التعلم ،|CS229, most of the learning algorithms,
+تسمع عنها في الفصل تعتمد على خوارزميات التحسين المحدبة ،|you- you hear about in a class rely on convex optimization algorithms,
+لكننا نريد تركيز الفصل|but we want to focus the class on
+على خوارزميات التعلم وقضاء وقت أقل على التحسين المحدب.|the learning algorithms and spend less time on convex optimization.
+لذلك تريد المجيء والاستماع إلى مفاهيم أكثر تقدمًا في التحسين المحدب.|So you want to come and hear about more advanced concepts in convex optimization.
+سنرجئ ذلك إلى قسم المناقشة.|We'll defer that to the discussion section.
+أه وبعد ذلك هناك القليل من المواضيع المتقدمة الأخرى|Uh, and then, there, there are few other advanced topics,
+أه نماذج ماركوف المخفية المتسلسلات الزمنية|uh, Hidden Markov Models, time series,
+أه التي نخطط لإرجائها إلى|uh, that we're planning to defer to the,
+أقسام مناقشة يوم الجمعة.|um, Friday discussion sections.
+تمام.  اممم ، لذا ، فلنرى.|Okay. Um, so, uh, let's see.
+حسنًا ، رائع ، و ، آه ،|Um, cool, and, uh, and,
+وأم ، جزء أخير من الخدمات اللوجستية ، أم ، أه ،|um, a final bit of logistics, um, uh,
+لأن هناك أدوات رقمية شاهدها البعض منكم ، ولكن ،|for- there are digital tools that some of you have seen, but, um,
+بالنسبة لهذه الفئة ، سنقود الكثير من  المناقشة من خلال|for this class, we'll drive a lot of the discussion through the,
+موقع بياتزا أه على الإنترنت.|uh, online website Piazza.
+كم منكم استخدم Piazza من قبل؟  حسنًا ، رائع ، في الغالب.|How- how many of you have used Piazza before? Okay, cool, mostly.
+واو كلكم|Wow, all of you?
+هذا مذهل جدا.  اه جيد.|That's very amazing. Uh, good.
+لذا ، أه ، لوحة مناقشة عبر الإنترنت|So, so, uh, online discussion board
+لأولئك منكم الذين لم يروها من قبل ، لكن ،|for those of you that haven't seen it before, but, um,
+بالتأكيد ، أشجعكم على المشاركة بنشاط|I definitely encourage you to participate actively
+في Piazza وأيضًا للإجابة على أسئلة الطلاب الآخرين.|on Piazza and also to answer other student's questions.
+أعتقد أن إحدى أفضل الطرق للتعلم والمساهمة ، كما تعلم ، في|I think that one of the best ways to learn as well as contribute, you know,
+العودة إلى الفصل ككل هي إذا رأيت شخصًا آخر يطرح سؤالاً على Piazza ،|back to the class as a whole is if you see someone else ask a question on Piazza,
+إذا قفزت وساعدت في الإجابة على ذلك ، آه ،|if you jump in and help answer that, uh,
+ذلك ،  التي غالبًا ما تساعدك وتساعد زملائك في الفصل.|that, that often helps you and helps your classmates.
+أنا أشجعك بشدة على القيام بذلك.|I strongly encourage you to do that.
+بالنسبة لأولئك الذين لديهم سؤال خاص ،|For those of you that have a private question,
+كما تعلمون ، في بعض الأحيان لدينا طلاب ، أم ، أه ،|you know, sometimes we have students, um, uh,
+يتواصلون معنا - بمسألة شخصية أو شيء ، كما تعلمون ،|reaching out to us to- with a personal matter or something that, you know,
+ليس من المناسب مشاركته في منتدى عام يكون فيه  إذا كنت مرحبًا بك|is not appropriate to share in a public forum in which case you're welcome
+في مراسلتنا عبر البريد الإلكتروني على عنوان البريد الإلكتروني للفصل أيضًا.|to email us at the class email address as well.
+أه ونحن نجيب في عنوان البريد الإلكتروني للصف- CLA- عنوان البريد الإلكتروني لأعضاء|Uh, and we answer in, in the class email address- the cla-
+هيئة التدريس على موقع الدورة|teaching staff's email address on the course website,
+يمكنك العثور عليه هناك والاتصال بنا.|you can find it there and contact us.
+لكن لأي شيء تقني|But for anything technical,
+أي شيء معقول تشاركه مع الفصل|anything reasonable to share with the class, uh,
+أه فيه معظم الأسئلة الفنية ومعظم الأسئلة اللوجيستية صح؟|which includes most technical questions and most logistical questions, right?
+أسئلة مثل ، كما تعلم ،|Questions like, you know,
+هل يمكنك تأكيد ما هو تاريخ منتصف المدة|can you confirm what date is midterm,
+، أو ، كما تعلم ، ماذا يحدث؟|or, or, you know, what happens?
+أه هل يمكنكم التأكيد متى ستصدر نشرة هذا وما إلى ذلك؟|Uh, can you confirm when is the handout for this going out and so on?
+بالنسبة للأسئلة غير الشخصية أو الخاصة بطبيعتها|For questions that are not personal or private in nature,
+، أشجعك بشدة على النشر على Piazza بدلاً من مراسلتنا عبر البريد الإلكتروني لأنه من الناحية الإحصائية ،|I strongly encourage you to post on Piazza rather than emailing us because statistically,
+تحصل في الواقع على إجابة أسرع ، آه ،|you actually get a faster answer, uh,
+نشرها على Piazza من ، كما تعلم  ،|posting it on- post- posting on Piazza than- than, you know,
+إذا انتظرت حتى يقوم أحدنا بالرد|if you wait for one of us to respond to you, um,
+عليك ، وسنستخدم|and we'll be using Gradescope as well,
+Gradescope أيضًا ، من أجل التصنيف عبر الإنترنت.|um, to- for, for online grading.
+وبعد ذلك ، إذا كنت لا تعرف ما هو Gradescope ، فلا تقلق بشأنه.|And then, if, if you don't know what Gradescope is, don't worry about it.
+سنرسل إليك ، وسنرسل إليك ، روابط ونوضح لك كيفية استخدامها لاحقًا.|We'll, we'll, we'll send you links and show you how to use it later.
+أم ، أوه ، واه ، مرة أخرى ،|Um, oh, and, uh, again,
+نسبة إلى- شيء لوجستي أخير يجب التخطيط له ، أممم ،|relative to- one last logistical thing to plan for, um,
+على عكس السنوات السابقة ، أم ، آه ،|unlike previous, um, uh,
+حيث قمنا بتدريس CS229 ،|years where we taught CS229,
+أه ، لذلك نحن نقوم باستمرار بتحديث المنهج ، أليس كذلك؟|uh, so we're constantly updating the syllabus, right?
+المحتوى التقني لمحاولة عرض أحدث خوارزميات التعلم الآلي ، أه ،|The technical content to try to show you the latest machine learning algorithms, uh,
+والتغييران اللوجيستيان الكبيران اللذان نجريهما هذا العام ،|and the two big logistical changes we're making this year,
+أعتقد أن أحدهما ، أه ،|I guess one is, uh,
+Python بدلاً من MATLAB ،|Python instead of MATLAB,
+والآخر هو ، أم ،|and the other one is, um,
+بدلاً من ذلك  لإجراء امتحان نصفي ، كما تعلمون ،|instead of having a midterm exam, you know,
+هناك موعد نصفي محدد بوقت ، أه ،|there's a timed midterm, uh,
+نحن نخطط للحصول على نصف فصل دراسي ، أه ، هذه الدورة ، بدلاً من ذلك.|we're planning to have a take-home midterm, uh, this course, instead.
+لذلك أنا أعرف أن بعض الناس قد تنفسوا بحدة عندما قلت ذلك.|So I, I know some people just breathed in sharply when I said that.
+[ضحك] لا أعرف ماذا يعني ذلك.|[LAUGHTER] I don't know what that means.
+[ضحك] هل كانت تلك صدمة أم سعادة؟  لا أعلم.|[LAUGHTER] Was that shock or happiness? I don't know.
+تمام.  لا تقلق ، فالفترة النصفية ممتعة.|Okay. Don't worry, midterms are fun.
+أنت- سوف تحبه.|You- you'll, you'll love it.
+[ضحك]|[LAUGHTER]
+حسنًا.|All right.
+إذن هذا كل شيء لـ- هذا كل شيء بالنسبة للجوانب اللوجستية.|So that's it for the- that's it for the logistical aspects.
+اممم ، اسمحوا لي أن أتحقق من - لذا دعني - أتحقق مما إذا كانت هناك أي أسئلة.|Um, let me check with the- so let- let me check if there are any questions.
+أوه ، أجل ، تفضل.|Oh, yeah, go ahead.
+في الحرم الجامعي ، هي تلك الدورات المقدمة كل ثلاثة أشهر [غير مسموع].|On campus, are those courses offered every quarter [inaudible].
+نعم.  هذا مثير للاهتمام.  اه دعنا نرى.|Yeah. So that's interesting. Uh, let's see.
+أعتقد أنه يتم تقديمه في الربيع.|I think it's offered in spring.
+وشخص آخر.  أوه ، نعم ، يتم تدريسها.|And one other person. Oh, yes, is teaching it.
+لذلك يقوم شخص آخر بتدريسها في ربع الربيع.|So someone else is teaching it in spring quarter.
+آه ، لم أكن أعرف في الواقع أنه سيتم تقديمه في الشتاء.|Um, uh, I actually did not know it was gonna be offered in winter.
+[غير مسموع]|[inaudible]
+أجل.|Yeah.
+[غير مسموع].|[inaudible].
+أجل ، أجل ، أجل.  لذا - أعتقد أن دليلًا مجانيًا وأعلمه آسفًا ،|Yeah, right, yeah. So- so I think a free guide and teaching it in- sorry,
+في [غير مسموع] وأنت محق ، تقوم بتدريسه في ، آه ،|in their [inaudible] and you are right, are teaching it in, uh,
+الربيع ، أه ، ولا أعتقد أنه يتم تقديمه في فصل الشتاء.|spring, uh, and I don't think it is offered in winter.
+[غير مسموع].|[inaudible].
+هل سيتم تسجيل الجلسة؟  نعم ، سيكونون.|Will the session be recorded? Yes, they will be.
+أوه ، وبالمناسبة ، إذا ، إذا ، إذا كنت تتساءل|Oh, and by the way, if, if, if you wonder
+لماذا أسجل أنني أكرر السؤال ،|why I'm recording that I'm repeating the question,
+فأنا أعلم أنه يبدو غريبًا ، فأنا أسجل بواسطة ميكروفون ،|I know it feels weird, I'm recording with a microphone,
+لذلك - حتى يشاهد الناس هذا في  المنزل يمكن أن يسمع السؤال.|so that- so that people watching this at home can hear the question.
+لكن أه المحاضرات وأقسام المناقشة|But, uh, both the lectures and the discussion sections,
+أه سيتم تسجيلها ونشرها على الموقع.|uh, will be- will be recorded and put on the website.
+أه ربما الشيء الوحيد الذي نفعله ولا يتم|Uh, maybe the one thing we do that's not
+تسجيله ولا يتم بثه هو ساعات العمل.  رائعة.  أليس هذا صحيحا؟|recorded and broadcast are the office hours. Great. Isn't that right?
+[ضحك]|[LAUGHTER]
+أوه ، أوه ، ولكن ،|Oh, oh, but,
+آه ، أعتقد ، آه ، هذا العام ،|uh, I think, uh, this year,
+آه ، لدينا 60 ساعة ، كم ساعة؟|uh, we have a 60-hour, how many hour?
+حسنًا ، 60 ساعة مكتب.|Well, 60 office hours.
+أه 60 ساعة مكتبية في الأسبوع.  أجل ، أجل.|Uh, 60 office hours per week. Right, yeah.
+[ضحك] لذا - لذا - آمل ذلك ،|[LAUGHTER] So- so- so hopefully,
+أنا - مرة أخرى ،|I- I just again,
+نحن - نحاول باستمرار تحسين الدورة.|we- we're constantly trying to improve the course.
+في السنوات السابقة ، كانت إحدى الملاحظات التي تلقيناها|In previous years, one of the feedback we got
+هي أن ساعات العمل كانت مزدحمة حقًا.|was that the office hours were really crowded.
+إذن ، لدينا 60 ساعة - 60 ساعة ،|So- so we have 60 hour- 60 hours,
+حوالي 60 ساعة مكتبية في الأسبوع هذا العام.  هذا- هذا يبدو كثيرًا.|about 60 office hour slots per week this year. That- that seems like a lot.
+لذا نأمل ، إذا كنت بحاجة إلى تعقب أحدنا ،|So hopefully, if you need to track down one of us,
+تعقب خبير مساعد للحصول على المساعدة ،|track down a TA to get help, hopefully,
+آمل أن - هذا سيسهل عليك القيام بذلك.  إنطلق.|that- that'll make it easier for you to do so. Go ahead.
+[غير مسموع].|[inaudible].
+قل ذلك مرة أخرى.  حسنًا-|Say that again. Well-
+[غير مسموع].|[inaudible].
+أوه ، حسنًا ، الأشياء اللوجستية مثل موعد الواجبات المنزلية ، سيتم تناولها في المحاضرات.|Oh, well logistical things like when homeworks are due, would be covered in lectures.
+أه عندنا أه|Uh, we have uh, yes,
+نعم فلدينا أه أربع واجبات منزلية مخطط لها.  أه آسف.|so we have uh, four planned homeworks. Oh sorry.
+[غير مسموع]|[inaudible]
+نعم ، وإذا ذهبت إلى- إذا ذهبت إلى|Yeah, and if you go to the- if you go to
+موقع الدورة التدريبية وقمت بالنقر فوق رابط المنهج الدراسي ،|the course website and you click on the syllabus link uh,
+فهذا يحتوي على تقويم مع وقت انتهاء كل واجبات منزلية وموعد استحقاقها.|that has a calendar with when each homework assignments go out and when they'll be due.
+أه أربع فروض وأه|Uh, so four homeworks and uh,
+مقترحات مشاريع مستحقة بعد أسابيع قليلة من الآن وأه|project proposals due a few weeks from now and uh,
+مشاريع نهائية نهاية الربع.|final projects due at the end of the quarter.
+ولكن كل الأيام المحددة مذكورة على موقع الدورة على ما أعتقد.|But all the, all the exact days are listed on the course website I think.
+] غير مسموع [|[inaudible]
+أه ، بالتأكيد نعم ، الفرق بين هذه الفئة و 229 أ.|Uh, sure yes, difference between this class and 229a.
+اممم ، دعني أفكر في كيفية الرد على ذلك.|Um, let me think how to answer that.
+نعم.  آه ، أجل أعلم ،|Yes. Uh, so yeah I know,
+كنت أتناقش في وقت سابق من هذا الصباح حول كيفية|I was debating earlier this morning how to
+الإجابة على ذلك لأنه طُلب مني ذلك عدة مرات.|answer that because I've been asked that a few times.
+حسنًا ، أعتقد أن ما حدث في جامعة ستانفورد هو|Um, so I think that what has happened at Stanford is that
+أن حجم الطلب على تعليم التعلم الآلي هو|the volume of demand for machine learning education is just,
+مجرد ارتفاع كبير جدًا لأن أي شيء يراه الجميع ،|right skyrocketing because anything everyone sees,
+يريد الجميع تعلم هذه|everyone wants to learn this stuff and so um,
+الأشياء وهكذا ، آه ، في الداخل - وكذلك|uh, so within- so
+علوم الكمبيوتر  يحاول القسم|the computer science department has been trying to grow
+زيادة عدد عروض التعلم الآلي التي نقدمها.|the number of machine learning offerings we have.
+أم أه ، لقد أبقينا بالفعل على التسجيل في|Um, uh, we actually kept the enrollments to
+CS229a عند عدد منخفض نسبيًا عند 100 طالب.|CS229a at a relatively low number at 100 students.
+لذلك لا أريد في الواقع تشجيع الكثير منكم على التسجيل لأن أه ،|So I actually don't want to encourage too many of you to sign up because uh,
+أعتقد أننا قد نكون قد وصلنا إلى الحد الأقصى للتسجيل بالفعل ،|I think we might be hitting the enrollment cap already so,
+لذا من فضلك لا تشترك جميعًا في CS229a لأن|so please don't all sign up for CS229a because um,
+أممم ، نحن- CS229a ، لا  لديها القدرة في هذا الربع ولكن نظرًا لأن CS229a هو أه ، أم ، فهو|we- CS229a, does not have the capacity this quarter but since CS229a is uh, um,
+أقل رياضيًا وأكثر تطبيقًا ،|much less mathematical and much more applied,
+أه ، أه ، نسخة تطبيقية أكثر نسبيًا من التعلم الآلي وآه ،|uh, uh, a relatively more applied version of machine learning and uh,
+لذلك أعتقد أنني أقوم بتدريس CS229a و CS230 و CS229  ، هذا الربع.|so I, I guess I'm teaching CS229a and CS230 and CS229, this quarter.
+من بين الثلاثة ، CS229 ،|Of the three, CS229,
+هو الأكثر رياضية.|is the most mathematical.
+أم ، إنه تطبيق أقل قليلاً من|Um, it is a little bit less applied than
+CS229a وهو تعلم آلي أكثر تطبيقيًا و CS230 هو تعلم عميق.|CS229a which is more applied machine learning and CS230 which is deep learning.
+نصيحتي للطلاب هي أن ،|My advice to students is that um,
+CS229 ، أه ، CS229a ،|CS229, uh, CS229a,
+عفواً ، اسمحوا لي أن أكتب هذا.|excuse me, let me write this down.
+أعتقد أنني -|I think I'm-
+لذلك|so CS229a, uh,
+يتم تدريس CS229a ، آه ، بتنسيق فصل دراسي مقلوب مما يعني أنه ،|is taught in a flipped classroom format which means that, uh,
+منذ أخذها ، سنشاهد مقاطع الفيديو بشكل أساسي|since taking it, we'll mainly watch videos um,
+على موقع Coursera ونقوم بالكثير من|on the Coursera website and do a lot of uh,
+تمارين البرمجة و  ثم اجتمع في أقسام المناقشة الأسبوعية.|programming exercises and then, meet for weekly discussion sections.
+أه ، لكن هناك فصل أصغر به] غير مسموع [.|Uh, but there's a smaller class with [inaudible] .
+أممم ، أنا ، أنصحك بذلك ،|Um, I, I would advise you that um,
+إذا كنت تشعر بأنك مستعد لـ CS229 و CS230 للقيام بذلك ، ولكن CS229 ،|if you feel ready for CS229 and CS230 to do those uh, but CS229,
+كما تعلم ، بسبب الرياضيات التي نقوم بها ، هذا هو ،|you know, because of the math we do, this is a,
+هذا عبء عمل ثقيل للغاية وصعب للغاية  فئة وهكذا ،|this is a very heavy workload and pretty challenging class and so,
+إذا لم تكن متأكدًا من استعدادك لـ CS229 و CS229a ،|if you're not sure you're ready for CS229 and CS229a,
+فقد يكون من الجيد|it may be a good thing to,
+، أن تأخذ أولاً ، آه ،|to, to take first, uh,
+ثم تغطي CS229 ، CS229a|and then uh, CS229, CS229a
+نطاقًا أوسع من خوارزميات التعلم الآلي  أه ،|cover a broader range of machine learning algorithms uh,
+و CS230 يركز أكثر على خوارزميات التعلم العميق على وجه التحديد ، صحيح.|and CS230 is more focused on deep learning algorithms specifically, right.
+وهي مجموعة ضيقة من الخوارزميات لكنها ،|Which is a much narrow set of algorithms but it is,
+كما تعلم ، واحدة من أصعب مجالات التعلم العميق.|you know, one of the hardest areas of deep learning.
+أه لا يوجد تداخل كبير في المحتوى بين الفئات الثلاث.|Uh, there is not that much overlap in content between the three classes.
+لذا إذا أخذت الثلاثة في الواقع ،|So if you actually take all three,
+فسوف تتعلم أشياء مختلفة نسبيًا عن كل منهم ، في الماضي ،|you'll learn relatively different things from all of them uh, in the past,
+كان لدينا طلابًا في نفس الوقت يأخذون 229 و 229 أ وهناك القليل من التداخل.|we've had students simultaneously take 229 and 229a and there is a little bit of overlap.
+كما تعلم ، فهم يفعلون نوعًا من|You know, they, they do kind of cover
+الخوارزميات ذات الصلة بالتغطية ولكن من وجهات نظر مختلفة.|related algorithms but from different points of view.
+لذا ، فإن بعض الأشخاص يأخذون بالفعل عدة دورات في نفس الوقت.|So, so some people actually take multiple of these courses at the same time.
+آه ، لكن 229 أ أكثر تطبيقًا ، أكثر قليلاً ،|Uh, but 229a is more applied, a bit more,
+أنت تعرف المعرفة العملية العملية وما إلى ذلك|you know practical know-how hands-on and so on and,
+، واه ، أقل رياضية.|and uh, much less mathematical.
+Uh ، و ، و CS230 هي أيضًا أقل|Uh, and, and CS230 is also less
+تطبيقًا رياضيًا أكثر حول نوع من جعلها تعمل حيث CS229a ،|mathematical more applied more about kind of getting it to work where CS229a,
+um ، نقوم بمشتقات رياضية أكثر بكثير في CS229.|um, we do much more mathematical derivations in CS229.
+رائع ، أي أسئلة؟  نعم ، شخص ما رفع يده.|Cool, any questions? Yes, someone had their hand up.
+] غير مسموع [|[inaudible]
+إذًا ، آه ، بمجرد أن تقول ذلك -|So uh, once you say that what- I would
+أفضل عمومًا أن ال يقوم الطالب بذلك لمصلحة الوقت ولكن ماذا ، ماذا تريد؟|generally prefer students not do that in the interest of time but what, what do you want?
+] غير مسموع [|[inaudible]
+أوه ، أرى ، بالتأكيد تفضل.|Oh, I see, sure go for it.
+من هو مسجل في 229 و 230؟|Who is enrolled in 229 and 230?
+أوه ليس الكثير منكم ، مثير للاهتمام.|Oh not that many of you, interesting.
+أوه ، هذا مثير للاهتمام حقًا.|Oh, that's actually interesting.
+رائع.  نعم.  شكرًا لك ، نعم ، لم أرغب في|Cool. Yeah. Thank you, yeah, I just didn't want to set
+تعيين حضور الطلاب الذين يستخدمون هذا كمنتدى لإجراء الاستطلاعات.|the presence of students using this as a forum to run surveys.
+[ضحك]|[LAUGHTER]
+كان هذا ، وهذا كان ،|That was, that was, that was,
+كان ذلك سؤالًا مثيرًا للاهتمام.|that that was an interesting question.
+لذا شكرا لك.|So thank you.
+[ضحك]|[LAUGHTER]
+اممم ، رائع.|Um, cool.
+حسنًا ، وبالمناسبة أعتقد أه ، كما تعلمون ،|All right, and, and by the way I think uh, you know,
+شيء واحد فقط عن ستانفورد هو|just one thing about Stanford is the
+عالم الذكاء الاصطناعي وعالم التعلم الآلي ،|AI world and machine learning world,
+الذكاء الاصطناعي أكبر من التعلم الآلي الصحيح|AI is bigger than machine learning right
+والتعلم الآلي أكبر من التعلم العميق.|and machine learning is bigger than deep learning.
+من الأشياء الرائعة لكونك طالبًا في جامعة ستانفورد ،|Um, one of the great things about being a Stanford student is,
+أنه يمكنك ، وأعتقد أنه يجب أن تأخذ عدة فصول دراسية ، أليس كذلك.|you can and I think should take multiple classes, right.
+أعتقد أن CS229 الخاص بك ،|I think that your CS229,
+كان لسنوات عديدة جوهر عالم التعلم الآلي في جامعة ستانفورد.|has for many years been the core of the machine learning world at Stanford.
+آه ، ولكن حتى بعد CS229 ،|Uh, but even beyond CS229,
+فإن الأمر يستحق وقتك في حضور فصول متعددة والحصول على وجهات نظر متعددة.|it's worth your while to take multiple classes and getting multiple perspectives.
+لذا ، إذا كنت تريد أن|So, so if you want to uh,
+تكون فعالًا حقًا ، كما تعلم ،|be really effective, you know,
+بعد تخرجك من جامعة ستانفورد ،|after you graduate from Stanford,
+فأنت تريد أن تكون خبيرًا في التعلم الآلي.|you do wanna be an expert in machine learning.
+هل تريد أن تكون خبيرًا في التعلم العميق.|You do wanna be an expert in deep learning.
+أه ، وربما تريد أن تعرف إحصائيات الاحتمالات.|Uh, and you probably wanna know probability statistics.
+ربما تريد معرفة القليل من التحسين المحدب ، وربما|Maybe you wanna know a bit of convex optimization, and maybe you
+تريد معرفة المزيد عن التعلم المعزز ،|wanna know a bit more about reinforcement learning,
+ومعرفة القليل عن التخطيط ،|know a ittle bit about planning,
+ومعرفة القليل عن الكثير من الأشياء.|know a bit about lots of things.
+لذا ، فأنا أشجعك بالفعل على أخذ عدة فصول دراسية على ما أعتقد.|So, so I actually encourage you to take multiple classes I guess.
+رائع.  حسنا.|Cool. All right.
+جيد.  حسنًا ، إذا لم تكن هناك أسئلة أخرى ،|Good. Um, if there are no more questions,
+فلنتحدث قليلاً عن بعض التعلم الآلي.|let's go on to talk a bit about some machine learning.
+حسنًا ، حسنًا ،|So um, all right,
+ما تبقى من هذا الفصل ،|so the remainder of this class,
+ما أود فعله هو|what I'd like to do is um,
+تقديم نظرة عامة سريعة على أه ،|give a quick overview of uh,
+كما تعلمون ،|you know, the major uh,
+المجالات الرئيسية للتعلم الآلي|areas of machine learning and also um,
+وأيضًا ، وكذلك ،  لك نوع من نظرة عامة على الأشياء التي تتعلمها|and, and also give you a sort of overview of the things you learn uh,
+في الأسابيع العشرة القادمة.|in the next 10 weeks.
+إذن ، ما هو التعلم الآلي؟|So, you know, what is machine learning?
+الصحيح.  يبدو أنه موجود في كل مكان هذه الأيام وهو مفيد للعديد من المساحات|Right. It seems to be everywhere these days and it's useful for so many spaces,
+، وأعتقد أن أممم|and, and I think that um,
+، واه ، كما تعلمون ، واه ، آه|and uh, you know, and uh, uh,
+، وأنا ، أشعر أنهم أه - فقط لأشارككم شخصيتي  تحيز صحيح.|and I, I feel like they uh- just to share with you my personal bias, right.
+أنت تقرأ الأخبار عن هؤلاء الأشخاص الذين يجنون|You, you read the news about these people who are making
+الكثير من المال لبناء خوارزميات التعلم.  أعتقد أن هذا رائع.|so much money building learning algorithms. I think that's great.
+آمل ، أتمنى أن تكسبوا جميعًا الكثير من المال|I hope, I hope all of you go make a lot of money
+ولكن الشيء الذي أجده أكثر إثارة|but the thing I find even more exciting is,
+هو العمل الهادف الذي يمكننا القيام به.|is the meaningful work we could do.
+أعتقد أنه ، كما تعلم ،|I think that, you know,
+أعتقد أنه في كل مرة يحدث فيها خلل تقني كبير يحدث الآن ، من|I think that every time there's a major technological disruption which there is now,
+خلال التعلم الآلي ،|through machine learning um,
+فإنه يمنحنا فرصة لإعادة تشكيل أجزاء كبيرة من العالم وإذا تصرفنا بشكل أخلاقي|it gives us an opportunity to remake large parts of the world and if we behave ethically
+بطريقة مبدئية ونستخدم  القوى العظمى للتعلم الآلي للقيام بأشياء|in a principled way and use the superpowers of machine learning to do things that,
+تساعد حياة الناس ، كما تعلمون.|you know, helps people's lives, right.
+ربما يمكننا ، آه ،|Maybe we could um, uh,
+ربما يمكنك تحسين نظام الرعاية الصحية ،|maybe you can improve the healthcare system,
+ربما يمكنك تحسين إعطاء كل طفل معلمًا شخصيًا.|maybe you can improve give every child a personalized tutor.
+أه ، ربما يمكننا جعل ديمقراطيتنا تسير بشكل أفضل بدلاً من جعلها تسير بشكل أسوأ.|Uh, maybe we can make our democracy run better rather than make it run worse.
+لكنني أعتقد أن|But I think that um,
+المعنى الذي أجده في التعلم الآلي هو أن هناك الكثير من الأشخاص الذين|the meaning I find in machine learning is that there's so many people that
+يتوقون إلينا للدخول ومساعدتهم باستخدام هذه الأدوات التي|are so eager for us to go in and help them with these tools that um,
+، إذا أصبحت جيدًا في هذه الأدوات ،|if, if you become good at these tools,
+فإنها تمنحك  فرصة لإعادة صنع قطعة ما ،|it gives you an opportunity to really remake some piece,
+قطعة ذات مغزى من العالم.|some meaningful piece of the world.
+أه ، بطريقة تساعد الآخرين وتجعل العالم نوعًا ما ،|Uh, hopefully in a way that helps other people and makes the world kind of,
+يجعل العالم مكانًا أفضل هو مبتذل جدًا في وادي السيليكون.|makes the world a better place is very cliche in Silicon Valley.
+لكن ، لكنني أعتقد ، كما تعلمون ، باستخدام هذه الأدوات ،|But, but I think, you know, with these tools,
+لديك بالفعل القدرة على القيام|you actually have the power to do
+بذلك ، وإذا ذهبت لكسب الكثير من المال ، فهذا رائع أيضًا.|that and if you go make a ton of money, that's great too.
+لكني أجد أه معنى أكبر بكثير للعمل الذي يمكننا القيام به.|But I find uh, much greater meaning of the work we could do.
+اممم ، يمنحنا فرصة فريدة للقيام بهذه الأشياء ، بشكل صحيح.|Um, it gives us a unique opportunity to do these things, right.
+لكن اممم ، على الرغم من كل إثارة التعلم الآلي.|But um, despite all the excitement of machine learning.
+ما هو التعلم الآلي؟|What is machine learning?
+لذا اسمحوا لي أن أقدم لكم بعض|So let me give you a couple um,
+التعريفات الخاصة بالتعلم الآلي.|definitions of machine learning.
+أم آرثر صموئيل الذي اشتهرت به أه|Um, Arthur Samuel whose claim to fame was uh,
+بناء برنامج لعب الداما|building a checkers playing program,
+أه عرفته على النحو التالي.|uh, defined it as follows.
+لذا فإن مجال الدراسة يمنح أجهزة الكمبيوتر القدرة على التعلم دون أن تتم برمجتها بشكل صريح.|So field of study gives computers the ability to learn without being explicitly programmed.
+أممم ، وأنت تعرف شيئًا مثيرًا للاهتمام ،|Um, and you know interesting- when,
+عندما قام آرثر صموئيل|when Arthur Samuel many,
+منذ عدة عقود ببناء|many decades ago, built
+برنامج لعبة الداما.|the checkers playing program.
+أه ، مناقشات اليوم كانت هل يمكن للكمبيوتر أن يفعل شيئًا|Uh, the debates of the day was can a computer ever do something
+لم يُطلب منه صراحةً؟  وآرثر صموئيل أه كتب|that it wasn't explicitly told to do? And Arthur Samuel uh, wrote a
+برنامج لعب الداما ، والذي من خلال اللعب الذاتي يتعلم ما إذا كانت أنماط أه ،|checkers playing program, that through self play learns whether the patterns of uh,
+رقعة الداما التي من المرجح أن تؤدي إلى الفوز|the checkerboard that are more likely to lead to win
+مقابل أكثر احتمالية أن تؤدي إلى الخسارة وتعلم أه ،|versus more likely to lead to a loss and learned uh,
+حتى تكون أفضل من آرثر  صموئيل المؤلف نفسه يلعب لعبة الداما.|to be even better than Arthur Samuel the author himself at playing checkers.
+في ذلك الوقت ، كان يُنظر إلى هذا على أنه نتيجة رائعة أن مبرمج كمبيوتر ،|So back then, this was viewed as a remarkable result that a computer programmer,
+كما تعلم ، يمكنه كتابة قطعة من|you know that could write a piece of
+البرنامج للقيام بشيء لا يستطيع برنامج الكمبيوتر نفسه|software to do something that the computer program himself
+القيام به ، أليس كذلك ، لأن هذا البرنامج أصبح أفضل من آرثر صموئيل أم ،|could not do, right, because this program became better than Arthur Samuel um,
+في  ، أه ، أه ، في|at, uh, uh, at,
+، في مهمة لعب لعبة الداما.|at, at the task of playing checkers.
+أعتقد أننا اليوم|Um, and I think today we um, are
+معتادون على أجهزة الكمبيوتر أو خوارزميات التعلم الآلي التي تتفوق على البشر في العديد من المهام.|used to computers or machine learning algorithms outperforming humans on so many tasks.
+آه ، لكن اتضح أنه عندما تختار مهمة ضيقة مثل|Uh, but it turns out that when you choose a narrow task like,
+التعرف على الكلام في نوع معين من المهام ،|speech recognition on a certain type of task,
+فربما يمكنك تجاوز مستوى الأداء البشري.|you can maybe surpass human level performance.
+إذا اخترت مهمة ضيقة مثل ،|If you choose a narrow task like,
+لعب لعبة|playing the game of Go,
+Go ، بدلاً من|than by throwing really,
+إلقاء الكثير من القوة الحسابية عليها واللعب الذاتي.|tons of computational power at it and self play.
+أه أه يمكن أن يكون لديك جهاز كمبيوتر|Uh, uh, uh you can have a computer,
+وأنت تعلم أن تصبح جيدًا جدًا|you know become very good at,
+في هذه المهام الضيقة.|at these narrow tasks.
+لكن ربما يكون هذا أحد الأمثلة الأولى في تاريخ الحوسبة.  ام.|But this is maybe one of the first such examples in the history of computing. Um.
+أه ، وأعتقد أن هذا هو أحد أكثر التعريفات التي يتم الاستشهاد بها على نطاق واسع.|Uh, and I think this is the one of the most widely cited, um, definitions right.
+يمنح أجهزة الكمبيوتر القدرة على التعلم دون أن تتم برمجتها بشكل صريح.  عرّف|Gives computers the ability learn without being explicitly programmed.
+أم ، صديقي توم ميتشل في كتابه المدرسي ،|Um, my friend Tom Mitchell in his textbook,
+هذا على أنه مشكلة تعلم موضوعة جيدًا.|defined this as a Well-posed Learning Problem.
+أه ، يُقال أن البرنامج يتعلم من|Uh, a program is said to learn from
+التجربة E فيما يتعلق بالمهمة T وبعض مقاييس الأداء P ،|experience E with respect to task T and some performance measure P,
+إذا تحسن أدائه على T ، كما تم قياسه بواسطة P ،|if its performance on T, as measured by P,
+مع التجربة E. وأنا - سألت Tom هذا.|improves with experience E. And I- I asked Tom this.
+سألت توم عما إذا|I asked Tom if, um,
+كان قد كتب هذا التعريف لمجرد أنه أراد أن يكون|he wrote this definition just because he wanted it to
+قافية و [ضحك] هو ، هو ، هو ، هو ، هو ، لم يقل نعم ،|rhyme and [LAUGHTER] he, he, he, he, he did not say yes,
+لكنني ، أنا ، لا أعرف.|but I, I, I don't know.
+أم ، ولكن في هذا التعريف ،|Um, but in this definition,
+فإن E. بالنسبة إلى حالة لعب الداما ،|the experienced E. For- for the case of playing checkers,
+فإن التجربة E ستكون تجربة وجود|the experience E would be the experience of having
+برنامج لعب لعبة الداما - لعب العديد من الألعاب ضد نفسه.|a checkers play- program played tons of games against itself.
+أه حتى أجهزة الكمبيوتر الكثير من المرضى|Uh, so computers lots of patients and
+ويجلسون هناك لأيام يلعبون الألعاب أو الداما ضد نفسها.|sit there for days playing games or checkers against itself.
+إذن هذه تجربة|So that's experience E.
+E. المهمة T هي مهمة لعب الداما ،|The task T is the task of playing checkers,
+مقياس الأداء P ربما ،|the performance measure P maybe,
+أممم ، ما هي فرصة هذا البرنامج|um, what's the chance of this program
+للفوز باللعبة التالية من لعبة الداما التي يلعبها ضد الخصم التالي.|winning the next game of checkers it plays against the next opponent.
+الصحيح.  لذلك ، نقول ، آه ،|Right. So- so we say that, ah,
+هذه مشكلة تعلم موضوعة جيدًا ، تعلم لعبة الداما.|this is a well-posed learning problem, learning the game of checkers.
+الآن ، ضمن|Now, within this, um,
+مجموعة الأفكار هذه مع التعلم الآلي ،|set of ideas with machine learning,
+هناك العديد من الأدوات المختلفة التي نستخدمها في التعلم الآلي.|there are many different tools we use in machine learning.
+وهكذا في الأسابيع العشرة القادمة ،|And so in the next 10 weeks,
+ستتعرف على مجموعة متنوعة من هذه الأدوات المختلفة.|you'll learn about a variety of these different tools.
+أم ، لذا فإن أولها وأكثرها استخدامًا هو التعلم تحت الإشراف.|Um, and so the first of them and the most widely used one is supervised learning.
+اممم ، دعنا نرى.|Um, let's see.
+أريد التبديل إلى السبورة البيضاء.|I wanna switch to the white board.
+هل تعرفون يا رفاق كيفية رفع الشاشة؟|Do you guys know how to raise the screen?
+[ضوضاء]|[NOISE]
+إذن ما أريد فعله اليوم هو مراجعة بعض الفئات الرئيسية ،|So what I wanna do today is really go over some of the major categories of,
+أه ، أدوات التعلم الآلي ، وأه ،|uh, Machine Learning Tools, and, uh,
+وما ستتعلمه في اليوم التالي ،|and so what you learn in the next,
+أم ، آه ، بنهاية هذا الربع.|um, ah, by the end of this quarter.
+لذا فإن أكثر أدوات التعلم الآلي استخدامًا هي|So the most widely used machine learning tool is,
+أه اليوم هو التعلم الخاضع للإشراف.|uh, today is supervised learning.
+في الواقع ، دعني أتحقق ، كيف ، كم منكم يعرف ما هو التعلم الخاضع للإشراف؟|Actually, let me check, how, how many of you know what supervised learning is?
+آه ، مثل الثلثين ، ربما نصفكم.|Ah, like two-thirds, half of you maybe.
+حسنًا ، رائع.  اسمحوا لي فقط أن أحددها بإيجاز.|Okay cool. Let me, let me just briefly define it.
+اممم ، هذا مثال واحد.|Um, here's one example.
+لنفترض أن لديك قاعدة بيانات|Let's say, you have a database of
+لأسعار المساكن ولذا سأقوم برسم مجموعة البيانات الخاصة بك حيث|housing prices and so I'm gonna plot your dataset where on the horizontal axis,
+سأقوم برسم حجم المنزل بالأقدام المربعة على المحور الأفقي.|I'm- I'm gonna plot the size of the house in square feet.
+وعلى المحور الرأسي|And on the vertical axis,
+، سنرسم سعر المنزل.|we'll plot the price of the house.
+الصحيح.  وربما تبدو مجموعة البيانات الخاصة بك هكذا.|Right. And, um, maybe your dataset looks like that.
+حسنًا ، والمحور الأفقي ،|Um, and so horizontal axis,
+أعتقد أننا سنطلق على هذا المحور X والمحور الرأسي الذي سنطلق عليه|I guess we'd call this X and vertical axis we'll call that Y.
+Y. لذلك ، تم إعطاء مشكلة التعلم الخاضعة للإشراف مجموعة بيانات|So, um, the supervised learning problem is given a dataset
+مثل هذه للعثور على تعيين العلاقة من X إلى Y.|like this to find the relationship mapping from X to Y.
+و  لذا ، اممم ، على سبيل المثال ،|And so, um, for example,
+دعنا نقول- دعنا نقول- لنفترض أن لديك- دعنا|let's say- let's say- let's say you have- let's
+نقول أنك محظوظ بما يكفي لامتلاك منزل في بالو ألتو.|say you're fortunate enough to own a house in Palo Alto.
+الصحيح.  آه ، وأنت تحاول بيعه|Right. Ah, and you're trying to sell it,
+، وتريد معرفة سعر المنزل.|and you want to know how the price of the house.
+لذلك ربما يكون لمنزلك حجم ،|So maybe your house has a size,
+كما تعلم ، بهذا المقدار على المحور الأفقي.|you know, of that amount on the horizontal axis.
+لا أعرف ، ربما هذه 500 قدم مربع ،|I don't know, maybe this is 500 square feet,
+1000 قدم مربع ، 1500 قدم مربع.|1,000 square feet, 1,500 square feet.
+إذن منزلك هو ، آه ، بمساحة 1250 قدمًا مربعة.|So your house is, ah, 1,250 square feet.
+الصحيح.  وتريد أن|Right. And you want to know,
+تعرف ، كيف يمكنك تسعير هذا المنزل.|you know, how do you price this house.
+لذلك ، بالنظر إلى مجموعة البيانات هذه ،|So given this dataset,
+هناك شيء واحد يمكنك القيام به|one thing you can do is,
+، وهو ملاءمة خط مستقيم لها.|um, fit a straight line to it.
+الصحيح.  وبعد ذلك يمكنك تقدير السعر أو|Right. And then you could estimate or predicts the price
+توقعه ليكون مهما كانت القيمة التي تقرأها على المحور الرأسي.|to be whatever value you read off on the, um, vertical axis.
+لذلك في التعلم الخاضع للإشراف ،|So in supervised learning,
+يتم إعطاؤك مجموعة بيانات بها ، آه ،|you are given a dataset with, ah,
+المدخلات X والتسميات Y|inputs X and labels Y,
+، وهدفك هو تعلم رسم الخرائط من X إلى Y.|and your goal is to learn a mapping from X to Y.
+صحيح.  الآن ، ربما يكون ملاءمة خط مستقيم للبيانات هو أبسط ما يمكن.|Right. Now, um, fitting a straight line to data is maybe the simplest possible.
+ربما تكون أبسط خوارزمية تعلم ممكنة ،|Maybe the simplest possible learning algorithm,
+وربما واحدة من أبسط خوارزميات التعلم الذاتي.|maybe one of the simplest poss- learning algorithms.
+أم ، بالنظر إلى مجموعة بيانات مثل هذه ،|Um, given a dataset like this,
+هناك العديد من الطرق الممكنة لتعلم رسم الخرائط ،|there are many possible ways to learn a mapping,
+لمعرفة تعيين الوظيفة من حجم الإدخال إلى السعر المقدر.|to learn the function mapping from the input size to the estimated price.
+وهكذا ، ربما تريد أن تناسب وظيفة تربيعية بدلاً من ذلك ،|And so, um, maybe you wanna fit a quadratic function instead,
+ربما يناسب البيانات بشكل أفضل قليلاً.|maybe that actually fits the data a little bit better.
+إذن كيف ستختار من بين النماذج المختلفة سيكون ، آه ،|And so how do you choose among different models will be, ah,
+إما تلقائيًا أو سيكون التدخل اليدوي -|either automatically or manual intervention will be-
+سيكون شيئًا سنقضي الكثير من الوقت في الحديث عنه.|will be something we'll spend a lot time talking about.
+الآن لإعطاء القليل أكثر.|Now to give a little bit more.
+اممم ، لتحديد عدد قليل من الأشياء.|Um, to define a few more things.
+هذا المثال هو مشكلة تسمى مشكلة الانحدار.|This example is a problem called a regression problem.
+يشير مصطلح الانحدار إلى|And the term regression refers to
+أن القيمة y التي تحاول توقعها مستمرة.|that the value y you're trying to predict is continuous.
+الصحيح.  أممم ، على النقيض من ذلك ،|Right. Um, in contrast,
+إليك نوع مختلف من المشاكل.|here's a- here's a different type of problem.
+أم ، المشكلة التي كان يعمل عليها بعض أصدقائي|Um, so problem that some of my friends were working on,
+، وسأبسط الأمر ، كانت مشكلة رعاية صحية ، حيث ، آه ،|and- and I'll simplify it was- was a healthcare problem, where, ah,
+كانوا ينظرون إلى ، آه ،|they were looking at, uh,
+سرطان الثدي أو أورام الثدي|breast cancer or breast tumors,
+، ويحاولون ذلك  تحديد ما إذا كان الورم حميدًا أم خبيثًا.|um, and trying to decide if a tumor is benign or malignant.
+الصحيح.  لذا فإن الورم عبارة عن كتلة في ثدي المرأة ،|Right. So a tumor is a lump in a- in a woman's breast, um,
+يمكن أن تكون خبيثة ،|is- can be ma- malign,
+أو سرطانية ، أو حميدًا ،|or cancerous, um, or benign,
+مما يعني أنك تعرفين ، تقريبًا أنها ليست ضارة.|meaning you know, roughly it's not that harmful.
+وهكذا إذا كان على المحور الأفقي ،|And so if on the horizontal axis,
+فأنت ترسم حجم الورم.|you plot the size of a tumor.
+اممم ، وعلى المحور العمودي ،|Um, and on the vertical axis,
+هل هو خبيث أم لا.|you plot is it malignant or not.
+خبيث يعني ضار ، صحيح.|Malignant means harmful, right.
+أم وبعض الأورام ضارة والبعض الآخر ليس كذلك.|Um, and some tumors are harmful some are not.
+وبالتالي ، سواء كانت خبيثة أم لا ، فإنها|And so whether it is malignant or not,
+تأخذ قيمتين فقط ، 1 أو 0.|takes only two values, 1 or 0.
+ولذا قد يكون لديك مجموعة بيانات ، أم ، من هذا القبيل.|And so you may have a dataset, um, like that.
+الصحيح.  آه ، بالنظر إلى هذا ،|Right. Ah, and given this,
+هل يمكنك تعلم رسم الخرائط من X إلى Y ،|can you learn a mapping from X to Y,
+بحيث إذا دخل مريض جديد إلى مكتبك ، آه ،|so that if a new patient walks into your office, uh,
+سار في مكتب الطبيب وكان حجم الورم ،|walks in the doctor's office and the tumor size is,
+كما تعلم ، هذا ، هل|you know say, this,
+يمكن لخوارزمية التعلم  اكتشف من هذه البيانات أنه من المحتمل ،|can the learning algorithm figure out from this data that it was probably,
+حسنًا ، بناءً على مجموعة البيانات هذه ،|well, based on this dataset,
+يبدو أن هناك- هناك احتمال كبير أن يكون هذا الورم خبيثًا.|looks like there's- there's a high chance that that tumor is, um, malignant.
+حسنًا ، إذن ، هذا مثال|Um, so, ah, so this is an example of
+على مشكلة|a classification problem and
+التصنيف ومصطلح التصنيف يشير إلى أن Y هنا تأخذ عددًا منفصلاً من المتغيرات.|the term classification refers to that Y here takes on a discrete number of variables.
+لذلك بالنسبة لمشكلة الانحدار ، فإن|So for a regression problem,
+Y هو رقم حقيقي.|Y is a real number.
+أعتقد أنه يمكن تقريب الأسعار تقنيًا إلى أقرب دولار وسنت ،|I guess technically prices can be rounded off to the nearest dollar and cents,
+لذا فإن الأسعار ليست أرقامًا حقيقية حقًا.|so prices aren't really real numbers.
+حسنًا ، أنت تعرف ذلك - لأنك ربما لن تقوم بتسعيره ،|Um, you know that- because you'd probably not price it,
+كيف هو الحال مع Pi مرات 1 مليون أو أيًا كان.|how's it like Pi times 1 million or whatever.
+آه ، لكن ، لذا ، ولكن لجميع الأغراض العملية ، فإن الأسعار مستمرة ،|Ah, but, so, so- but for all practical purposes prices are continuous
+لذلك نسميها توقع أسعار المساكن على أنها مشكلة انحدار ،|so we call them housing price prediction to be a regression problem,
+بينما إذا كان لديك ، آه ، قيمتان للإنتاج المحتمل ،|whereas if you have, ah, two values of possible output,
+0 و 1 ، نسميها تصنيفًا  مشكلة.|0 and 1, call it a classification problem.
+حسنًا ، إذا كان لديك مخرجات K منفصلة ، لذلك|Um, if you have K discrete outputs so,
+، إذا كان الورم يمكن أن يكون ، أه ،|uh, if the tumor can be, uh,
+خبيثًا أو إذا كان هناك خمسة أنواع من السرطان ، صحيح ،|malignant or if there are five types of cancer, right,
+إذن لديك واحد من خمسة نواتج محتملة ،|so you have one of five possible outputs,
+فهذه أيضًا مشكلة تصنيف.|then that's also a classification problem.
+إذا كان الإخراج منفصلاً.|If the output is discrete.
+الآن ، أريد أن أجد طريقة مختلفة لتصور مجموعة البيانات هذه|Now, um, I wanna find a different way to visualize this dataset which is,
+، دعني أرسم خطًا في الأعلى.|um, let me draw a line on top.
+وسأقوم فقط ، كما تعلمون ،|And I'm just going to, you know,
+برسم خريطة لكل هذه البيانات على المحور الأفقي لأعلى على خط.|map all this data on the horizontal axis upward onto a line.
+لكن دعني أريكم ما سأفعله.|But let me show you what I'm gonna do.
+سأستخدم الرمز O للدلالة.|I'm going to use a symbol O to denote.
+الصحيح.  أممم ، آمل أن ما فعلته كان واضحًا.|Right. Um, I hope what I did was clear.
+فأخذت مجموعتي الأمثلة|So I took the two sets of examples,
+أه الأمثلة الإيجابية والسلبية.|uh, the positive and negative examples.
+كان المثال الإيجابي هذا 1 ،|Positive example was this 1,
+المثال السلبي كان 0.|negative example was 0.
+وأخذت كل هذه الأمثلة و- ودفعتهم نوعًا ما لأعلى على خط مستقيم ،|And I took all of these examples and- and kinda pushed them up onto a straight line,
+واستخدمت رمزين ،|and I use two symbols,
+وأستخدم O للإشارة إلى الأمثلة السلبية وأستخدم التقاطعات للإشارة إلى إيجابية  أمثلة.|I use O's to denote negative examples and I use crosses to denote positive examples.
+تمام.  هذه مجرد طريقة مختلفة لتصور نفس البيانات ، أممم ،|Okay. So this is just a different way of visualizing the same data, um,
+عن طريق رسمها على الخط واستخدام ، كما تعلمون ،|by drawing it on the line and using, you know,
+رمزين للإشارة إلى القيمتين المنفصلتين 0 و 1 ، أليس كذلك؟|two symbols to denote the two discrete values 0 and 1, right?
+إذن ، اممم ، اتضح أنه ، آه ،|So, um, it turns out that, uh, uh,
+في كلا المثالين ،|in both of these examples,
+كان الإدخال X أحادي البعد ،|the input X was one-dimensional,
+كان رقمًا حقيقيًا واحدًا.|it was a single real number.
+بالنسبة لمعظم|For most of the, um,
+تطبيقات التعلم الآلي التي تعمل بها|machine learning applications you work with,
+، سيكون الإدخال X متعدد الأبعاد.|the input X will be multi-dimensional.
+لن تحصل على رقم واحد فقط وسيُطلب منك توقع رقم آخر.|You won't be given just one number and asked to predict another number.
+بدلاً من ذلك ، ستحصل غالبًا على أه|Instead, you'll often be given, uh,
+ميزات متعددة وأرقام متعددة للتنبؤ برقم آخر.|multiple features and multiple numbers to predict another number.
+لذلك على سبيل المثال ، بدلاً من مجرد استخدام|So for example, instead of just using a
+حجم الورم للتنبؤ - لتقدير الأورام الخبيثة - الأورام الخبيثة مقابل الأورام الحميدة ،|tumor size to predict- to estimate malignancy- malignant versus benign tumors, um,
+فقد يكون لديك بدلاً من ذلك ميزتان حيث يكون أحدهما|you may instead have two features where one is
+حجم الورم والثاني هو عمر المريض ،|tumor size and the second is age of the patient,
+ويتم إعطاؤك مجموعة بيانات  ، [ضوضاء]|and be given a dataset, [NOISE]
+أليس كذلك؟  وستحصل على مجموعة بيانات تبدو هكذا ، أليس كذلك؟|right? And be given a dataset that looks like that, right?
+أين الآن مهمتك ، أم ،|Where now your task is, um,
+بالنظر إلى ميزتي إدخال ،|given two input features,
+لذا X هي حجم الورم وعمره ،|so X is tumor size and age,
+كما تعلمون ، مثل المتجه ثنائي الأبعاد ،|you know, like a two-dimensional vector,
+أممم ، ومهمتك مُعطاة ، أه ،|um, and your task is given, uh,
+هاتان ميزتا الإدخال ،|these two input features,
+أم ، للتنبؤ  ما إذا كان الورم خبيثًا أم حميدًا.|um, to predict whether a given tumor is malignant or benign.
+لذا إذا سار مريض جديد في عيادة الطبيب|So if a new patient walks in a doctor's office
+وكان حجم الورم هنا والعمر هنا ،|and that the tumor size is here and the age is here,
+لذا هذه النقطة هناك ،|so that point there,
+إذن نأمل أن تستنتج ، كما تعلمون ،|then hopefully you can conclude that, you know,
+أن ورم هذا المريض ربما يكون حميدًا ، أليس كذلك؟|this patient's tumor is probably benign, right?
+المقابلة لـ O ، هذا المثال السلبي.|Corresponding the O, that negative example.
+أممم ، وما هو الشيء الوحيد الذي ستتعلمه ، آه ،|Um, and so what thing- one thing you'll learn, uh,
+الأسبوع المقبل هو خوارزمية التعلم التي يمكن أن تلائم خطًا مستقيمًا للبيانات على النحو التالي ،|next week is a learning algorithm that can fit a straight line to the data as follows,
+نوعًا ما من هذا القبيل ، لفصل الأمثلة الإيجابية والسلبية.|kinda like that, to separate out the positive and negative examples.
+افصل بين الحرفين O والصلبان.|Separate out the O's and the crosses.
+وهكذا في الأسبوع المقبل ، ستتعرف على خوارزمية الانحدار اللوجستي|And so next week, you'll learn about the logistic regression algorithm which,
+التي يمكنها فعل ذلك.|um, which can do that.
+تمام؟  لذا ، فإن أحد أكثر الأشياء إثارة للاهتمام التي ستتعلمها هو ، آه ، دعنا نرى.|Okay? So, um, one of the most interesting things you'll learn about is, uh, let's see.
+لذا في هذا المثال ،|So in this example,
+قمت برسم مجموعة بيانات تحتوي على ميزتين للإدخال ، أممم ،|I drew a dataset with two input features, um,
+عندما - لذلك لدي أصدقاء عملوا بالفعل|when- so I have friends that actually worked on
+على سرطان الثدي ، آه ، مشكلة التنبؤ|the breast cancer, uh, prediction problem,
+، وعمليًا ، عادة ما يكون لديك أكثر من ميزة أو ميزتين ،|and in practice you usually have a lot more than one or two features,
+وعادة ما يكون لديك الكثير من الميزات التي لا يمكنك رسمها على السبورة ، أليس كذلك؟|and usually you have so many features you can't plot them on the board, right?
+لذا بالنسبة لمشكلة توقع سرطان الثدي الفعلية ،|And so for an actual breast cancer prediction problem,
+يعمل أصدقائي على هذا - كانوا يستخدمون العديد من الميزات الأخرى مثل ،|my friends are working on this were- were using many other features such as,
+لا تقلق بشأن ما تعنيه هذه -|don't worry about what these me- mean,
+أعتقد أن سماكة الكتلة ،|I guess clump thickness,
+آه ، كما تعلمون ، انتظام الخلية  الحجم ،|uh, you know, uniformity of cell size,
+وتوحيد شكل الخلية ، أليس كذلك؟|uniformity of cell shape, right?
+أم أه التصاق كيف تلتصق الخلايا ببعضها بشكل جيد.|Um, uh, adhesion, how well the cells stick together.
+لا تقلق بشأن ما يعنيه هذا ، ولكن ،|Don't worry about what this means but, uh,
+إذا كنت تفعل ذلك بالفعل في تطبيق طبي فعلي ،|if you are actually doing this in a- in a actual medical application,
+فهناك فرصة جيدة لاستخدام ميزات أكثر بكثير من اثنتين فقط.|there's a good chance that you'll be using a lot more features than just two.
+أه وهذا يعني أنه لا يمكنك رسم هذه البيانات ،|Uh, and this means that you actually can't plot this data,
+أليس كذلك؟  إنها ثنائية الأبعاد.|right? It's two high-dimensional.
+لا يمكنك رسم أشياء أعلى من 3-أبعاد أو ربما 4-أبعاد ،|You can't plot things higher than 3-dimensional or maybe 4-dimensional,
+أو شيء من هذا القبيل ، لذلك عندما يكون لدينا الكثير من|or something like that and so when we have lots of
+الميزات ، من الصعب بالفعل رسم هذه البيانات.|features it's actually difficult to plot this data.
+سأعود إلى هذا في ثانية في نظرية التعلم.|I'll come back to this in a second in learning theory.
+أم ، وأحد الأشياء التي ستتعلم عنها - لذلك بينما نقوم بتطوير خوارزميات التعلم ،|Um, and, uh, one of the things you'll learn about- so as we develop learning algorithms,
+ستتعلم كيفية إنشاء|you'll learn how to build, um,
+خوارزميات الانحدار أو خوارزميات التصنيف التي يمكنها التعامل|regression algorithms or classification algorithms that can deal
+مع هذا العدد الكبير نسبيًا من الميزات.|with these relatively large number of features.
+واحدة من|One of the, uh,
+أكثر النتائج الرائعة التي تعلمتها هي أنك ،|most fascinating results you learn is that, um,
+[ضوضاء] ، ستتعرف أيضًا على خوارزمية تسمى Support Vector Machine والتي|[NOISE] you'll also learn about an algorithm called the Support Vector Machine which uses
+لا تستخدم واحدة أو اثنتين أو ثلاثة أو 10 أو 100 أو مليون من ميزات الإدخال ،|not one or two or three or 10 or 100 or a million input features,
+ولكنه يستخدم عددًا لا نهائيًا من ميزات الإدخال ، أليس كذلك؟|but uses an infinite number of input features, right?
+وهكذا ، لذا ، فقط للتوضيح ، إذا|And so, so, so just to be clear, if in
+كانت حالة المريض في هذا المثال تمثل رقمًا واحدًا ،|this example the state of a patient were represents as one number,
+كما تعلمون ، حجم الورم ، أه ،|you know, tumor size, uh,
+في هذا المثال لدينا ميزتان.|in this example we had two features.
+لذلك تم تمثيل حالة المريض باستخدام رقمين ،|So the state of a patient were represented using two numbers,
+حجم الورم والعمر.|the tumor size and the age.
+إذا كنت تستخدم قائمة الميزات هذه ، فربما|If you use this list of features maybe
+يتم تمثيل المريض بخمسة أو ستة أرقام.|a patient that's represented with five or six numbers.
+أه ، ولكن هناك خوارزمية تسمى آلة متجه الدعم التي|Uh, but there's an algorithm called the support vector machine that
+تسمح لك باستخدام ناقل أبعاد لا نهائي ،|allows you to use an infinite-dimensional vector,
+أم ، لتمثيل مريض.|um, to represent a patient.
+وكيف تتعاملون مع|And, um, how do you deal with that
+ذلك وكيف يمكن للكمبيوتر تخزين متجه لا نهائي ، أليس كذلك؟|and how can the computer even store an infinite-dimensional vector, right?
+أعني ، كما تعلمون ، ذاكرة الكمبيوتر ،|I mean, you know, computer memory,
+يمكنك تخزين رقم صف واحد أو رقمين من الصفوف ،|you can store one row number, two row numbers,
+لكن لا يمكنك تخزين عدد غير محدود من أرقام الصفوف في|but you can't store an infinite number of row numbers in
+جهاز كمبيوتر دون نفاد الذاكرة أو سرعة المعالج أو أيًا كان.|a computer without running out of memory or processor speed or whatever.
+فكيف تفعل ذلك؟|So so how do you do that?
+آه ، لذلك عندما نتحدث عن دعم آلات المتجه|Uh, so when we talk about support vector machines
+وبالتحديد الطريقة التقنية المسماة kernels ،|and specifically the technical method called kernels,
+ستتعلم كيفية بناء خوارزميات التعلم التي تعمل مع ، آه ،|you'll learn how to build learning algorithms that work with, uh,
+بحيث تكون قوائم الميزات|so that the infinitely long lists of features,
+الطويلة بلا حدود ، قائمة طويلة بلا حدود من الميزات  من أجل ذلك - ويمكنك أن|infinitely long list of feature of- for for- which which- and you can
+تتخيل أنه إذا كان لديك قائمة طويلة بلا حدود من الأرقام لتمثيل مريض|imagine that if you have an infinitely long list of numbers to represent a patient,
+، فقد يمنحك ذلك الكثير من المعلومات حول هذا المريض ، وبالتالي|that might give you a lot of information about that patient and so that
+فهذه إحدى خوارزميات التعلم الفعالة نسبيًا لحل المشكلات ،  حسنا؟|is one of the relatively effective learning algorithms to solve problems, okay?
+اممم ، لذلك هذا التعلم تحت الإشراف.|Um, so that's supervised learning.
+وكما تعلم ، دعني فقط ،|And, you know, let me just,
+أم ، آه ، قم بتشغيل مقطع فيديو ،|um, uh, play a video,
+أم ، أريكم مثالًا ممتعًا أقدم قليلاً|um, show you a fun- slightly older example
+للتعلم الخاضع للإشراف لإعطائك فكرة عما يعنيه هذا.|of supervised learning to give you a sense of what this means.
+[ضوضاء] ولكن في قلب التعلم الخاضع للإشراف فكرة أنه أثناء التدريب ، أه ،|[NOISE] But at the heart of supervised learning is the idea that during training, uh,
+يتم إعطاؤك المدخلات X جنبًا إلى جنب مع التسميات Y وتعطيهما معًا في نفس الوقت ،|you are given inputs X together with the labels Y and you give it both at the same time,
+ووظيفة خوارزمية التعلم الخاصة بك هي ،  ،|and the job of your learning algorithm is to, uh,
+ابحث عن تعيين بحيث إذا أعطيت علامة X جديدة ،|find a mapping so that given a new X,
+يمكنك تعيينها إلى الناتج الأنسب Y.|you can map it to the most appropriate output Y.
+أم ، لذلك هذا فيديو قديم جدًا ، آه ، تم إنشاؤه بواسطة ، um ،|Um, so this is a very old video, uh, made by, um,
+DA Pomerleau وقد عرفناه منذ فترة طويلة  الوقت أيضا|DA Pomerleau and we've known him for a long time as well, uh,
+أه باستخدام التعلم الموجه للقيادة الذاتية.|using supervised learning for autonomous driving.
+أه ، هذه ليست حالة من الفن للقيادة الذاتية بعد الآن ،|Uh, this is not state of the art for autonomous driving anymore,
+لكنها في الواقع تعمل بشكل جيد بشكل ملحوظ.|but it actually does remarkably well.
+أوه ، وأه ، وأنت ، آه ،|Oh, and, uh, um, as you, uh,
+تسمع بعض المصطلحات الفنية مثل التكاثر العكسي ،|you hear a few technical terms like back-propagation,
+ستتعلم كل تلك الأساليب في هذا الفصل ، أه|you'll learn all those techniques in this class, uh,
+، وبنهاية الفصل ، إما أن|and by the end of class, you'll either build
+تبني  خوارزمية التعلم أكثر فعالية مما تراه هنا.|a learning algorithm much more effective than what you see here.
+لكن دعنا- لنرى هذا التطبيق.|But let's- let's- let's see this application.
+أه ، هل يمكنك رفع مستوى الصوت ربما يكون ذلك؟|Uh, could you turn up the volume maybe have that?
+هل تحصلون يا رفاق على حجم الصوت؟|Are you guys getting volume audio?
+[الخلفية]|[BACKGROUND]
+أوه ، فهمت.|Oh, I see.
+حسنًا ، سأروي هذا.|All right, I'll narrate this.
+[ضحك]|[LAUGHTER]
+لذا سأستخدم الشبكة العصبية الاصطناعية لقيادة هذه السيارة التي ،|So I'll be using artificial neural network to drive this vehicle that,
+آه ، تم بناؤها في جامعة كارنيجي ميلون ، آه ، منذ سنوات عديدة.|uh, was built at Carnegie Mellon University, uh, many years ago.
+وما يحدث هو أه|And what happens is, uh,
+أثناء التدريب يراقب الإنسان أم|during training, it watches the human, um,
+يقود السيارة وأعتقد 10 مرات في الثانية|drive the vehicle and I think 10 times per second,
+أه يرقم الصورة أمام السيارة.|uh, it digitizes the image in front of the vehicle.
+وهذه صورة التقطتها كاميرا أمامية.|And, um, so that's a picture taken by a front-facing camera.
+أم ، وما تفعله هو من أجل جمع البيانات المصنفة ،|Um, and what it does is in order to collect labeled data,
+فإن السيارة أثناء قيادتها للإنسان ،|the car while the human is driving it,
+تسجل كل من الصورة مثل رؤيتها هنا|records both the image such as it's seeing here,
+، وكذلك اتجاه التوجيه الذي اختاره الإنسان.|as well as, the steering direction that was chosen by human.
+إذن في الجزء السفلي الصورة تحولت إلى درجات رمادية وأقل دقة|So at the bottom here is the image turned to grayscale and lower res,
+، وأه ، في الأعلى ،|and, uh, on top,
+اسمحوا لي أن أوقف هذا لثانية.|let me pause this for a second.
+حسنًا ، هذا هو اتجاه السائق|Um, this is the driver direction,
+، الخط ضبابي نوعًا ما ولكن هذا النص يقول اتجاه السائق.|the font's kinda blurry but this text says driver direction.
+إذن هذه هي العلامة Y|So this is the Y label,
+، التسمية Y التي اختارها السائق البشري.|the label Y that the human driver chose.
+أممم ، وهكذا يوضح موضع هذا الشريط|Um, and so the position of this white bar of
+الأبيض لهذه النقطة البيضاء كيف يختار الإنسان توجيه السيارة.|this white blob shows how the human is choosing to steer the car.
+إذن في هذه الصورة ،|So in this, in this image,
+النقطة البيضاء هي قليلاً إلى يسار المركز لذا فإن الإنسان ،|the white blob is a little bit to the left of center so the human is,
+كما تعلم ، يتوجه قليلاً إلى اليسار.|you know, steering just a little bit to the left.
+هذا السطر الثاني هنا هو ناتج الشبكة العصبية وفي البداية ،|Um, this second line here is the output of the neural network and initially,
+لا تعرف الشبكة العصبية كيفية القيادة|the neural network doesn't know how to drive,
+، ولذا فهي تقوم فقط بإخراج هذه اللطاخة البيضاء في كل مكان وتقول ،|and so it's just outputting this white smear everywhere and it's saying,
+"لا ، لا أعرف ، افعل  أنا أقود يسارًا ، يمينًا ، وسطًا؟|"No, I don't know, do I drive left, right, center?
+لا أعرف. "  لذلك يتم إخراج هذا التمويه الرمادي في كل مكان.|I don't know." So it's outputting this gray blur everywhere.
+أم ، وبينما تتعلم الخوارزمية|Um, and as the algorithm learns
+باستخدام خوارزمية تعلم الانتشار العكسي|using the back-propagation learning algorithm
+أو نزول التدرج اللوني الذي ستتعلم عنه ،|or gradient descents which you'll learn about,
+أه ، ستتعرف في الواقع على النسب المتدرج يوم الأربعاء.|uh, you'll actually learn about gradient descent this Wednesday.
+أم ، هل ترى أن|Um, you see that
+مخرجات الشبكة العصبية تصبح أقل فأقل من هذه اللطاخة البيضاء ،|the neural network's outputs becomes less and less of this white smear,
+هذا التمويه الأبيض ولكنه يبدأ ، آه ،|this white blur but starts to, uh,
+يصبح أكثر حدة ، ويبدأ في محاكاة|become sharper, um, and starts to mimic more
+اتجاه القيادة الذي يختاره الإنسان بشكل أكثر دقة.|accurately the human selected driving direction.
+الصحيح.  إذن هذا ، أم ،|Right. So this, um,
+هو مثال على التعلم الخاضع للإشراف لأن|is an example of supervised learning because
+السائق البشري يوضح المدخلات X والمخرجات Y ،|the human driver demonstrates inputs X and outputs Y,
+آه ، بمعنى ، إذا رأيت هذا أمام السيارة يتجه هكذا هكذا يكون X و Y.|uh, meaning, uh, if you see this in front of the car steer like that so that's X and Y.
+و ، آه ،  بعد أن تعلمت خوارزمية التعلم|And, uh, after the learning algorithm has learned,
+، يمكنك بعد ذلك ،|um, you can then,
+آه ، حسنًا ، يقوم بالضغط على زر|uh, well, he pushes a button,
+، ورفع اليدين عن عجلة القيادة ، ثم ،|takes the hands off the steering wheel, um,
+[الضوضاء] ثم يستخدم هذه الشبكة العصبية لقيادة نفسها ، أليس كذلك؟|[NOISE] and then it's using this neural network to drive itself, right?
+رقمنة الصورة أمام الطريق|Digitizing the image in front of the road,
+وأخذ هذه الصورة وتمريرها عبر خوارزمية التعلم|taking this image and passing it through the learning algorithm,
+عبر الشبكة العصبية المدربة|through the trained neural network,
+والسماح للشبكات العصبية بتحديد اتجاه التوجيه|letting the neural networks select a steering direction,
+أه ثم استخدام محرك صغير لتدوير العجلة.|uh, and then using a little motor to turn the wheel.
+أم ، هذه نسخة أكثر تقدمًا قليلاً والتي دربت نموذجين منفصلين ؛|Um, this is slightly more advanced version which has trained two separate models;
+أحدهما ، على ما أعتقد ، لطريق مكون من حارتين ،|one for, I think, a two-lane road,
+وواحد لطريق مكون من أربعة حارات.|one for a four-lane road.
+أه ، إذن هذا هو ، أم ،|Uh, so that's the, um,
+أه ، إذن الخطان الثاني والثالث هذا للطريق ذي المسارين ،|uh, so the second and third lines this is for a two-lane road,
+هذا طريق من أربعة مسارات.|this is a four-lane road.
+والمحكم هو خوارزمية أخرى تحاول تحديد ما إذا كان|And the arbitrator is, is another algorithm that tries to decide whether
+نموذج الطريق ذي المسارين أو من أربعة حارات|the two-lane or the four-lane road model is
+هو الأكثر ملاءمة لحالة معينة.|the more, more appropriate one for a particular given situation.
+أم ، وكما هو الحال مع ألفين ، عفواً ، طريق ذو حارة واحدة أو ،|Um, and so as Alvin is, excuse me a one-lane road or,
+آه ، طريق ذو مسارين.|uh, a two-lane road.
+لذا ، إذن ، إنها تسير من طريق ذي حارة واحدة هنا ،|So, so, so it's driving from a one-lane road here,
+آه ، إلى تقاطع آخر ،|uh, to another intersection,
+أم ، ال ، آه ، أدركت الخوارزمية أنه يجب التبديل من ،|um, the, uh the the algorithm realizes it should swi- switch over from,
+أم ، أعتقد أنني نسيت ،|um, I think I forget,
+أعتقد ذلك-  الشبكة العصبية إلى|I think the one-lane neural network to the- to
+الشبكة العصبية ذات المسارين [ضوضاء] واحدة من هذه ، أليس كذلك؟|the two-lane neural network [NOISE] one of these, right?
+حسنا.  ام.|All right. Um.
+تمام.  أوه ، أوه ، صحيح.|Okay. Oh, oh, right.
+بخير.  سنرى فقط اللحظة الدرامية الأخيرة|Fine. We'll just see the final dramatic moment of
+للتحول من طريق باتجاه واحد إلى طريق ذي مسارين.|switching from a one-way road to a two-lane road.
+[ضحك]|[LAUGHTER]
+حسنًا.|All right.
+أم ، أه ، وأعتقد ،|Um, uh, and I think,
+كما تعلمون ، هذا هو استخدام التعلم الخاضع للإشراف كمدخلات ،|you know, so this is just using supervised learning to- take as input,
+ما هو أمام السيارة لاتخاذ قرار بشأن اتجاه التوجيه.|what's in front of the car to decide on the steering direction.
+هذه ليست حالة فنية لكيفية تصنيع السيارات ذاتية القيادة اليوم ،|This is not state of the art for how self-driving cars are built today,
+ولكن كما تعلم ، يمكنك القيام ببعض الأشياء في بعض السياقات المحدودة.|but you know, you could do some things in some limited contexts.
+أه أه وأعتقد|Uh, uh, and I think,
+أه خلال عدة|uh, in, in several weeks,
+أسابيع ستتمكن في الواقع من بناء شيء أكثر تعقيدًا من هذا.|you'll actually be able to build something that is more sophisticated than this.
+الصحيح.  حسنًا ، بعد التعلم تحت الإشراف ،|Right. Um, so after supervised learning,
+آه ، سنقضي بعض الوقت في هذا الفصل|uh, we wi- will- in this class we'll spend
+في الحديث عن إستراتيجية التعلم الآلي.|a bit of time talking about machine learning strategy.
+أيضًا ، حسنًا ، أعتقد في ملاحظات الفصل أننا نعلق على ذلك كنظرية تعلم.|Also, well, I think on the class notes we annotate this as a learning theory.
+ولكن ما يعنيه هذا هو ،|But what that means is, um,
+عندما أعطيك الأدوات اللازمة للخروج وتطبيق خوارزميات التعلم بشكل فعال.|when I give you the tools to go out and apply learning algorithms effectively.
+وأعتقد أنني كنت محظوظًا لأنني ،|And I think I've been fortunate to have,
+آه ، كما تعلمون ، لأعرف الكثير من ، آه ،|uh, you know, to know a lot of, uh,
+آه ، أنا ،|uh, I, I think that,
+أعتقد ، أنا ، لقد كنت محظوظًا لأنني ،|um, I've been fortunate to have,
+كما تعلم ، على مدار السنوات التي زرتها باستمرار  الكثير من شركات التكنولوجيا العظيمة.|you know, over the years constantly visited lots of great tech companies.
+أه ، أه ، أكثر من مرة لدي ذلك - ربما كنت مرتبطًا به ، أليس كذلك؟|Uh, uh, more than once that I've that- that I've been probably associated with, right?
+لكن في كثير من الأحيان ، لمجرد مساعدة الأصدقاء|But often, just to help friends out,
+، أزور العديد من شركات|I visit various tech companies,
+التكنولوجيا ، والتي أنا متأكد من أن منتجاتها مثبتة على هاتفك الخلوي.|uh, whose products I'm sure are installed on your cell phone.
+آه ، لكني غالبًا ما أزور شركات التكنولوجيا وأنت تعلم ،|Uh, but I often visit tech companies and you know,
+تحدث إلى فرق التعلم الآلي وشاهد ما يفعلونه ،|talk to the machine learning teams and see what they're doing,
+ومعرفة ما إذا كان بإمكاني مساعدتهم.|and see if I can help them out.
+وما أراه هو أن هناك فرقًا كبيرًا|And what I see is that there's a huge difference in
+في فعالية كيفية قيام|the effectiveness of how
+فريقين مختلفين بتطبيق نفس خوارزمية التعلم بالضبط.|two different teams could apply the exact same learning algorithm.
+حسنا؟  أه ، وأعتقد أن|All right? Uh, and I think that, um,
+ما رأيته للأسف هو أنه في|what I've seen sadly is that
+بعض الأحيان سيكون هناك فريق أو حتى في بعض أفضل شركات التكنولوجيا ، أليس كذلك؟|sometimes there will be a team or even in some of the best tech companies, right?
+شركات ، The ، the ، EV ، AI ، أليس كذلك؟|The, the, the, the EV, AI companies, right?
+و ، ومضاعفاتهم ،|And, and, and multiple of them,
+حيث تذهب وتحدث إلى فريق|where you go talk to a team and they'll
+وسيخبروك عن شيء ما كانوا يعملون عليه لمدة ستة أشهر.|tell you about something that they've been working on for six months.
+وبعد ذلك ، يمكنك إلقاء نظرة سريعًا على البيانات ،|And then, you can quickly take a look at the data and,
+والاستماع إلى أنها ليست كذلك - فالخوارزمية لا|and hear that they're not- the algorithm isn't
+تعمل تمامًا وأحيانًا يمكنك إلقاء نظرة على ما يفعلونه|quite working and sometimes you can look at what they're doing,
+، وتذهب نعم ، كما تعلم ،|and go yeah, you know,
+يمكنني  أخبرتك منذ ستة أشهر أن هذا النهج لن ينجح أبدًا ، أليس كذلك؟|I could have told you six months ago that this approach is never gonna work, right?
+ما وجدته هو|Um, and, um, what I find is that
+أن أمهر ممارسي التعلم الآلي هم إستراتيجيون للغاية.|the most skilled machine learning practitioners are very strategic.
+أعني بذلك أن مهارتك في اتخاذ القرار ،|By which I mean that your skill at deciding- um,
+عندما تعمل في مشروع للتعلم الآلي ،|when you work on a machine learning project,
+لديك - لديك - الكثير من القرارات التي يتعين عليك اتخاذها.|you have- you- you have a lot of decisions to make.
+حق؟  هل تجمع المزيد من البيانات؟|Right? Do you collect more data?
+هل تحاول خوارزمية تعلم مختلفة؟|Do you try a different learning algorithm?
+أه ، هل تستأجر وحدات معالجة رسومات أسرع لتدريب خوارزمية التعلم الخاصة بك لفترة أطول؟|Uh, do you rent faster GPUs to train your learning algorithm for longer?
+أو إذا قمت بجمع المزيد من البيانات ،|Or if you collect more data,
+ما نوع البيانات التي تجمعها؟|what type of data do you collect?
+أو لكل هذه الخيارات المعمارية ،|Or for- all of these architectural choices,
+باستخدام الشبكات العصبية لآلة مرجعية وهي الانحدار ،|using neural networks for reference machine which is regression,
+أي منها تختار؟|which ones do you pick?
+حسنًا ، ولكن هناك الكثير من القرارات التي تحتاج إلى|Um, but there are a lot of decisions you need to
+اتخاذها عند إنشاء خوارزميات التعلم هذه.|make when building these learning algorithms.
+لذلك ، هناك شيء فريد تمامًا بالنسبة للطريقة التي ندرس بها ، وهو|So one thing that's quite unique to the way we teach is, uh,
+أننا نريد مساعدتك على أن تصبح أكثر منهجية في قيادة التعلم الآلي|we want to help you become more systematic in driving machine learning as a,
+باعتباره نظامًا هندسيًا منهجيًا ،|as a systematic engineering discipline,
+بحيث عندما تعمل يومًا ما كمشروع للتعلم الآلي  ،|so that when one day when you are working on as machine learning project,
+يمكنك معرفة ما يجب فعله بعد ذلك بكفاءة.|you can efficiently figure out what to do next.
+حق؟  أنا ، وأحيانًا أقوم بعمل تشبيه لكيفية|Right? Um, and I sometimes make an analogy to how,
+، آه ، أه ،|um, to, uh, uh,
+إلى ، هندسة البرمجيات.|to, to software engineering.
+اممم ، كما تعلمون ، مثل سنوات عديدة مضت ،|Um, you know, like many years ago,
+كان لدي صديق ، اممم ،|I had a friend, um,
+من شأنه تصحيح أخطاء الكود عن طريق تجميعها ، وبعد ذلك|that would debug code by compiling it and then,
+، سيبحث هذا الصديق عن جميع الأخطاء النحوية ، أليس كذلك؟|um, uh, this friend would look for all of the syntax errors, right?
+هذا ، كما تعلم ، مخرجات مترجم C ++.|That, you know, C++ compiler outputs.
+واعتقدوا أن أفضل طريقة لإزالة الأخطاء|And they thought that the best way to eliminate the errors
+هي حذف جميع أسطر التعليمات البرمجية التي تحتوي على|is to delete all the lines of code with
+أخطاء نحوية وكان ذلك [ضحك] أول دليل إرشادي.|syntax errors and that was [LAUGHTER] their first heuristic.
+لذلك لم يكن الأمر جيدًا ، أليس كذلك؟|So that did not go well, right?
+أم أه ، لقد استغرق الأمر مني بعض الوقت لإقناعهم بالتوقف عن فعل ذلك.|Um, uh, it took me a while to persuade them to stop doing that.
+آه ، لكن ، لكن ، لكن اتضح أنه ،|Uh, but, but, but so it turns out that, um,
+عندما تقوم بتشغيل خوارزمية تعلم ،|when you run a learning algorithm,
+كما تعلم ، لا تعمل أبدًا في المرة الأولى.|you know, it almost never works the first time.
+حسنا؟  هذه هي الحياة فقط.|All right? It's this just life.
+آه ، آه ، والطريقة التي ستتبعها في تصحيح أخطاء خوارزمية التعلم سيكون|Uh, uh, and, and the way you go about debugging the learning algorithm will
+لها تأثير كبير على كفاءتك ،|have a huge impact on your efficiency o- on,
+على مدى السرعة التي يمكنك بها بناء أنظمة تعلم فعالة.|on how quickly you can build effective learning systems.
+وأعتقد أنه حتى الآن ، كان|And I think until now,
+الكثير من - من هذه العملية ، آه ،|too much of the- of this process of, uh,
+جعل خوارزميات التعلم الخاصة بك تعمل بشكل جيد نوعًا من العمليات السحرية السوداء حيث ،|making your learning algorithms work well has been a black magic kind of process where,
+كما تعلمون ، عملت على هذا لعقود.|you know, has worked on this for decades.
+لذلك عندما تقوم بتشغيل شيء ما ،|So when you run something,
+فأنت لا تعرف لماذا لا يتعرف عليه مثل ، "مرحبًا ،|you don't know why it does not recognize it like, "Hey,
+ماذا أفعل وهي تقول ، أوه ، نعم ، افعل ذلك."|what do I do and it says, Oh, yeah, do that."
+وبعد ذلك ، وبعد ذلك ، نظرًا لأنه يتمتع بخبرة كبيرة ، فقد نجح الأمر ،|And then, and then, because he's so experienced it works,
+لكنني أعتقد ، أن|but I think, um,
+ما نحاول القيام به في مجال التعلم الآلي|what we're trying to do with the discipline of machine learning
+هو تطويره من السحر الأسود ،|is to evolve it from a black magic,
+والمعرفة القبلية ، والشيء القائم على الخبرة إلى  عملية هندسة منهجية.|tribal knowledge, experience-based thing to a systematic engineering process.
+حسنا.  وهكذا ، في وقت لاحق من هذا الربع ،|All right. And so um, later this quarter,
+عندما نتحدث عن إستراتيجية التعلم الآلي ،|as we talk about machine learning strategy,
+سنتحدث عن نظرية التعلم.|we'll talk about learning theory.
+سنحاول أن نقدم لك بشكل منهجي أدوات حول كيفية القيام|We'll try to systematically give you tools on how to,
+بوضع الإستراتيجيات.|um, uh, go about strategizing.
+آه ، لذا - لذلك يمكن أن يكون فعالًا جدًا في ،|Uh, so- so it can be very efficient in, um,
+كيف أنت بنفسك ،|how you- how you yourself,
+كيف يمكنك قيادة فريق لبناء نظام تعليمي فعال ،|how you can lead a team to build an effective learning system,
+لأنني لا أريدك أن تكون أحد هؤلاء الأشخاص ، أنت  تعلم ،|because I don't want you to be one of those people that, you know,
+تضيع ستة أشهر في اتجاه ما|wastes six months on some direction that
+ربما كان من الممكن أن يكتشف بسرعة نسبيًا أنه لم يكن واعدًا.|maybe could have relatively quickly figured out it was not promising.
+أو ربما|Or maybe one last analogy,
+تشبيه أخير ، إذا كنت ، إذا كنت معتادًا على تحسين الكود ، أليس كذلك؟|if you- um, if you're used to optimizing code, right?
+جعل الكود يعمل بشكل أسرع ،|Making code run faster,
+لست متأكدًا مما إذا كنت قد فعلت ذلك.|I'm not sure if you have done that.
+أه ، أه ، أه ، مهندسو البرمجيات الأقل خبرة ،|Uh, uh, uh, less experienced software engineers,
+الذين سيغوصون في الكود ويحسّنونه ،|who'll just dive in and optimize the code,
+يحاولون جعله يعمل بشكل أسرع ، أليس كذلك؟|they try to make it run faster, right?
+لنأخذ C ++ والرمز في التجميع أو شيء من هذا القبيل.|Let's take the C++ and code in assembly or something.
+لكن الأشخاص الأكثر خبرة سيديرون ملف تعريف لمحاولة|But more experienced people will run a profiler to try to figure
+معرفة أي جزء من الكود هو في الواقع عنق الزجاجة ثم التركيز فقط على تغيير ذلك.|out what part of code is actually the bottleneck and then just focus on changing on that.
+لذا أه أحد الأشياء التي نتمنى القيام بها في هذا الربع هو ، أه ،|So, uh, one of the things we hope to do this quarter is, uh,
+أه ، أنقل إليكم بعضًا من هذه المبادئ الهندسية الأكثر منهجية.|uh, convey to you some of these more systematic engineering principles.
+حسنا.  ونعم.|All right. And yeah.
+أوه ، وهذا في الواقع مثير جدا للاهتمام.|Oh, and actually this is very interesting.
+هذا أه ، نعم.|This is a, uh, uh, yeah.
+في الواقع ، لقد تلقيت - لقد تمت دعوتي ،|Actually, I've been- I've been invited,
+لذا في الواقع - كم منكم سمع برحلة التعلم الآلي؟|so actually- so how many of you have heard the machine learning journey?
+أوه ، فقط القليل منكم ، ممتع.|Oh, just a few of you, interesting.
+أوه ، في الواقع ، لذا ،|Oh, so actually, so,
+إذا كان أي منكم مهتمًا ،|so- if any of you are interested,
+أم ، فقط في|um, just in my,
+وقت فراغي ، آه ،|uh, spare time, uh,
+لقد كنت أكتب كتابًا ،|I've been writing a book,
+أم ، أه ، لمحاولة تقنين|um, uh, to try to codify
+مبادئ الهندسة المنهجية للآلة  التعلم وهكذا إذا كنت ،|systematic engineering principles for machine learning and so if you are,
+أه ، وهكذا أه ،|uh, and so uh,
+إذا كنت تريد ، كما تعلم ،|if you want the, you know,
+نسخة مجانية من الكتاب ،|free draft copy of the book,
+فقم بالتسجيل للحصول على قائمة بريدية هنا.|sign up for a mailing list here.
+أميل إلى كتابة الأشياء ووضعها على الإنترنت مجانًا ، نعم.|I tend to just write stuff and put it on the Internet for free, yeah.
+إذا أردت مسودة نسخة مجانية من الكتاب|So if you want a free draft copy of the book,
+أه أه تعرف|uh, uh, you know,
+إذهب إلى هذا الموقع أه|go to this website, uh,
+أدخل بريدك الإلكتروني وسيقوم الموقع بإرسال نسخة من هذا الكتاب.|enter your e-mail address and the website will send you a copy of that book.
+وسأتحدث قليلاً عن هذه المبادئ الهندسية أيضًا.|And I'll talk a little bit about these engineering principles as well.
+تمام.  حسنا.  لذا أه ،|Okay. All right. So, uh,
+الموضوع الأول ، التعلم الآلي.|so first subject, machine learning.
+المادة الثانية نظرية التعلم.|Second subject, learning theory.
+اممم واه الموضوع الرئيسي الثالث الذي سنتحدث عنه هو أه التعلم العميق أليس كذلك؟|Um, and, uh, the third major subject we'll talk about is, uh, deep learning, right?
+وبالتالي لديك الكثير من الأدوات في التعلم الآلي والعديد منها|And so you have a lot of tools in machine learning and many of them are
+يستحق التعلم عنها وأنا أستخدم العديد من الأدوات المختلفة في التعلم الآلي ،|worth learning about and I use many different tools in machine learning,
+كما تعلمون ، للعديد من التطبيقات المختلفة.|you know, for many different applications.
+هناك مجموعة فرعية واحدة من التعلم الآلي مثيرة حقًا الآن|There's one subset of machine learning that's really hot right now
+لأنها تتقدم بسرعة كبيرة ، وهي التعلم العميق.|because it's just advancing very rapidly, which is deep learning.
+ولذا سنقضي بعض الوقت في الحديث عن التعلم العميق حتى تتمكن من|And so we'll spend a little time talking about deep learning so that you can
+فهم أساسيات كيفية تدريب الشبكة العصبية أيضًا.|understand the basics of how to train a neural network as well.
+لكنني أعتقد أن هذا هو المكان الذي يغطي فيه CS229|But I think that's where CS229
+مجموعة أوسع بكثير من الخوارزميات وكلها مفيدة.|covers a much broader set of algorithms which are all useful.
+CS230 ، يغطي بشكل أضيق فقط التعلم العميق ، أليس كذلك؟  ام.|CS230, more narrowly covers just deep learning, right? Um.
+لذا ، بخلاف القطع|So, uh, other than deep learning slash
+المائل للتعلم العميق بعد التعلم العميق للشبكات العصبية ، فإن الآخر|after- after deep learning slash neu- neural networks the other,
+، الأربعة ، أربعة من خمسة موضوعات رئيسية سنغطيها ستكون حول التعلم غير الخاضع للإشراف.|the four, four of the five major topics we'll cover will be on unsupervised learning.
+اممم ، إذن ما هو التعلم غير الخاضع للرقابة؟|Um, so what is unsupervised learning?
+[ضوضاء]|[NOISE]
+لذلك رأيتني أرسم صورة كهذه الآن ، أليس كذلك؟|So you saw me draw a picture like this just now, right?
+وستكون هذه مشكلة تصنيف مثل الورم ،|And this would be a classification problem like the tumor,
+الخبيثة ، المشاكل الحميدة ، هذه مشكلة تصنيف.|malignant, benign problems, this is a classification problem.
+وكانت هذه مشكلة تعلم خاضعة للإشراف لأنه يجب عليك تعلم|And that was a supervised learning problem because you have to learn
+تعيين وظيفة من X إلى Y.|a function mapping from X to Y.
+أم ، سيكون التعلم غير الخاضع للإشراف إذا أعطيتك مجموعة بيانات كهذه بدون تسميات.|Um, unsupervised learning would be if I give you a dataset like this with no labels.
+إذن لقد أعطيت للتو المدخلات X و no Y ،|So you're just given inputs X and no Y,
+وقد طُلب منك أن تجد شيئًا مثيرًا للاهتمام في هذه البيانات ،|and you're asked to find me something interesting in this data,
+واكتشف ، كما تعلمون ، هيكلًا مثيرًا للاهتمام في هذه البيانات.|figure out, you know, interesting structure in this data.
+أم ، وهكذا في مجموعة البيانات هذه ،|Um, and so in this dataset,
+يبدو أن هناك مجموعتين ،|it looks like there are two clusters,
+ومن ثم فإن خوارزمية التعلم غير الخاضعة للإشراف|and then unsupervised learning algorithm
+والتي تعلمناها عن مجموعة الوسائل K ،|which we learned about called K-means clustering,
+سوف تكتشف|will discover this, um,
+هذا الهيكل في البيانات.|this structure in the data.
+أم ، أمثلة أخرى بالإضافة إلى التعلم ، كما تعلم ،|Um, other examples as well as learning, you know,
+إذا - إذا كنت فعلاً ، فإن|if- if you actually,
+أخبار Google هي موقع ويب ممتع للغاية.|Google News is a very interesting website.
+أحيانًا أستخدمه للبحث ، أليس كذلك؟|Sometimes I use it to look up, right?
+آخر الأخبار ، فقط هذا المثال القديم.|Latest news, just this old example.
+لكن أخبار Google تزحف يوميًا أو تقرأ ،|But Google News everyday crawls or reads,
+أه ، أه ، لا أعرف ، أه ، أه ، عدة آلاف أو|uh, uh, I don't know, uh, uh, many many thousands or
+عشرات الآلاف من المقالات الإخبارية على الإنترنت وتجمعها معًا ، أليس كذلك؟|tens of thousands of news articles on the Internet and groups them together, right?
+على سبيل المثال ، هناك مجموعة من المقالات حول تسرب BP Oil Well ، وقد|For example, there's a set of articles on the BP Oil Well spill, and it has,
+أخذت الكثير من المقالات التي كتبها صحفيون مختلفون وجمعتهم معًا.|uh, taken a lot of the articles written by different reporters and grouped them together.
+لذا يمكنك ، كما تعلم ،|So you can, you know,
+معرفة ذلك ما هي BP ،|figure out that what BP,
+آه ، بئر زيت Macondo ، أليس كذلك؟|uh, Macondo oil well, right?
+هذه مقالة على شبكة سي إن إن حول تسرب بئر النفط ،|That this is a CNN article about the oil well spill,
+وهناك مقال لصحيفة الجارديان حول تسرب بئر النفط وهذا|there's a Guardian article about oil well spill and this is
+مثال على خوارزمية التجميع أثناء أخذ|an example of a clustering algorithm whereas taking
+هذه المصادر الإخبارية المختلفة واكتشاف أن|these different news sources and figuring out that these are
+هذه كلها قصص عن نفس الشيء ،  الصحيح؟|all stories kind of about the same thing, right?
+أم ، وأمثلة أخرى للتجميع ،|Um, and other examples of clustering,
+مجرد الحصول على البيانات ومعرفة المجموعات التي تنتمي معًا.|just getting data and figuring out what groups belong together.
+أم ، الكثير من العمل على البيانات الجينية.|Um, a lot of work on, um, genetic data.
+هذا هو تصور لبيانات ميكروأري الجينية.|This is a visualization of- of genetic microarray data.
+عند تقديم مثل هذه البيانات ،|Where given data like this,
+يمكنك تجميع الأفراد في أنواع|you can group individuals into different types
+مختلفة من - إلى أفراد من خوارزميات مختلفة ، أه ، خصائص|of- into individuals of different, uh, characteristics, um,
+، أم ، أو تجميع خوارزميات تجميع هذا النوع من البيانات معًا ، يتم استخدامها|or clustering algorithms grouping this type of data together is used to, um,
+لتنظيم مجموعات الحوسبة ، كما تعلمون ،|organize computing clusters, you know,
+اكتشف  ما هي سير عمل الآلات الأكثر|figure out what machines workflows are more related
+ارتباطًا ببعضها البعض وتنظيم مجموعات الحوسبة بشكل مناسب.|to each other and organize computing clusters appropriately.
+لذا ، خذ شبكة اجتماعية مثل LinkedIn أو Facebook أو|So take a social network like LinkedIn or Facebook or
+شبكات اجتماعية أخرى واكتشف مجموعات|other social networks and figure out which are the groups of
+الأصدقاء والمجتمعات المتماسكة داخل شبكة|friends and which are the cohesive communities within a social network,
+اجتماعية أو تجزئة السوق.|um, or market segmentation.
+أم ، في الواقع العديد من الشركات التي عملت معها تنظر في|Um, actually many companies I've worked with look at
+قاعدة بيانات العملاء وتجمع المستخدمين معًا.|the customer database and cluster the users together.
+لذا يمكنك القول أننا أربعة أنواع من المستخدمين ، كما تعلمون ،|So you can say that looks like we're four types of users, you know,
+يبدو هكذا ، أم ،|looks like that, um,
+هناك ، أه ،|there are the, uh,
+محترفون شباب يتطلعون إلى تطوير أنفسهم ،|young professionals looking to develop themselves,
+هناك ، كما تعلمون ،|there are the, you know,
+أمهات كرة القدم وآباء كرة القدم ،  هناك هذه الفئة وهذه الفئات.|soccer moms and soccer dads, there are this category and these categories.
+يمكنك بعد ذلك التسويق لقطاعات السوق المختلفة ، بشكل منفصل.|You can then market to the different market segments, um, separately.
+آه ، وفي الواقع ،|Uh, and- and actually,
+منذ سنوات عديدة كان صديقي أندرو مور ، آه ، أه|many years ago my friend Andrew Moore, uh, uh,
+، يستخدم هذا النوع من|was using this type of data for
+البيانات لتحليل البيانات الفلكية لتجميع المجرات معًا.  هل لديك سؤال؟|astronomical data analysis to group together galaxies. You have a question?
+[غير مسموع].|[inaudible].
+هل التعلم غير الخاضع للإشراف هو نفسه التعلم العنقودي؟  لا ليس كذلك.|Is unsupervised learning the same as learning clustering? No it's not.
+لذا فإن التعلم غير الخاضع للإشراف على نطاق واسع هو مفهوم استخدام البيانات غير المسماة.|So unsupervised learning broadly is the concept of using unlabeled data.
+إذن فقط X والعثور على أشياء مثيرة للاهتمام حوله ، أليس كذلك؟|So just X and finding interesting things about it, right?
+اممم ، إذن ، أم ، على سبيل المثال ،|Um, so, um, for example,
+آه ، هذا في الواقع - أطلق النار.|uh, actually here's- shoot.
+لن ينجح هذا معكم جميعًا ، وسوف يفعلون ذلك لاحقًا في الفصل الدراسي على ما أعتقد.|This won't work with all of you will do this later in the cla- in the class I guess.
+اممم ، ربما أقول أننا سنفعل ذلك لاحقًا.|Um, maybe I say we'll do this later.
+مشكلة حفلة الكوكتيل أم أه|Cocktail party problem, um, uh,
+مشكلة تعليمية أخرى بدون إشراف.|is another unsupervised learning problem.
+قراءة المقطع الصوتي لهذا لشرح هذا بالرغم من ذلك|Reading the audio for this to explain this though,
+، دعني أفكر في كيفية شرح ذلك.|um, let me think how to explain this.
+حسنًا ، مشكلة حفلة الكوكتيل وسأحاول|Um, the cocktail party problem and I'll try to
+القيام بالعرض التوضيحي عندما نتمكن من الحصول على كل عملك على هذا الكمبيوتر المحمول.|do the demo when we can get all your work on this laptop.
+هي مشكلة ، حيث ،|Is a problem where, um,
+إذا كان لديك غرفة صاخبة وقمت|if you have a noisy room and you stick
+بلصق عدة ميكروفونات في الغرفة وتسجيل أصوات متداخلة ،|mult- multiple microphones in the room and record overlapping voices,
+أممم ، بحيث لا تصل أي تسميات إلى العديد من الميكروفونات|um, so that no labels reaches multiple microphones,
+، أو مجموعة من الميكروفونات ،|an array of microphones,
+في غرفة بها الكثير من الأشخاص  تتحدث.|in a room of lots of people talking.
+أه كيف يمكنك أن تجعل الخوارزمية تفصل أصوات الناس.|Uh, how can you have the algorithm separate out the people's voices.
+إذن فهذه مشكلة تعلم غير خاضعة للإشراف لأنه|So that's an unsupervised learning problem because,
+لا توجد تسميات.|um, there are no labels.
+لذلك ، ما عليك سوى لصق الميكروفونات في الغرفة وجعلها|So you just stick microphones in the room and have it
+تسجل أصوات أشخاص مختلفين ، وأصوات متداخلة ،|record different people's voices, overlapping voices,
+ولديك عدة مستخدمين في نفس الوقت|you have multiple users at the same time and then
+ثم تجعلها تحاول فصل أصوات الأشخاص.|have it try to separate out people's voices.
+وأحد تمارين البرمجة التي تقوم بها لاحقًا ،|And one of the programming exercises you do later is,
+إذا كان لدينا ، كما تعلم ، خمسة أشخاص يتحدثون.|if we have, you know, five people talking.
+كل ميكروفون يسجل خمسة أصوات متداخلة ، أليس كذلك؟|So each microphone records five people's overlapping voices, right?
+لأنه ، كما تعلمون ، كل ميكروفون يسمع خمسة أشخاص في نفس الوقت.|Because, you know, each microphone hears five people at the same time.
+كيف يمكنك الحصول على خوارزمية تفصل بين|How can you have an algorithm separate out
+هذه الأصوات بحيث تحصل على تسجيلات نظيفة لصوت واحد فقط في كل مرة.|these voices so you get clean recordings of just one voice at a time.
+وهذا ما يسمى مشكلة حفلة الكوكتيل والخوارزمية التي|So that's called the cocktail party problem and the algorithm you
+تستخدمها للقيام بذلك تسمى ICA ، تحليل المكونات المستقلة.|use to do this is called ICA, Independent Components Analysis.
+وهذا شيء تقوم بتنفيذه في أحد تمارين الواجبات المنزلية اللاحقة ، أليس كذلك؟|And that's something you implement in one of these later homework exercises, right?
+أم ، وهناك أمثلة أخرى للتعلم غير الخاضع للإشراف أيضًا.|Um, and there are other examples of unsupervised learning as well.
+أه ، الإنترنت به أطنان من البيانات النصية غير المسماة.|Uh, the Internet has tons of unlabeled text data.
+أنت فقط تمتص البيانات من الإنترنت.|You just suck down data from the Internet.
+لا توجد تسميات بالضرورة ولكن هل يمكنك تعلم أشياء مثيرة للاهتمام حول اللغة ،|There are no labels necessarily but can you learn interesting things about language,
+ومعرفة ما - اكتشف ،|figure out what- figure out on,
+لا أعرف ، كانت إحدى أفضل النتائج التي تم الاستشهاد بها مؤخرًا هي تعلم المقارنات ،|I don't know, one of the best cited results recently was learning analogies,
+مثل نعم ، الرجل للمرأة كملك  الملكة أليس كذلك؟|like yeah, man is to woman as king is to queen, right?
+أو أ- ما هي طوكيو بالنسبة لليابان مثل واشنطن العاصمة بالنسبة للولايات المتحدة ، أليس كذلك؟|Or a- what's a Tokyo is to Japan as Washington DC is to the United States, right?
+لتعلم مقارنات من هذا القبيل.|To learn analogies like that.
+اتضح أنه يمكنك تعلم مقارنات مثل تلك من البيانات غير المسماة ،|It turns out you can learn analogies like that from unlabeled data,
+فقط من النصوص على الإنترنت.|just from texts on the Internet.
+لذلك هذا أيضًا تعلم غير خاضع للإشراف.|So that's also unsupervised learning.
+تمام؟  حسنًا ، بعد التعلم غير الخاضع للإشراف ،|Okay? Um, so after unsupervised learning,
+أوه ، والتعلم غير الخاضع للإشراف.|oh, and unsupervised learning.
+إذن أنت تعلم أن التعلم الآلي مفيد جدًا اليوم.|So you know machine learning is very useful today.
+اتضح أن معظم الموجة الأخيرة|It turns out that most of the recent wave of
+للقيمة الاقتصادية التي أنشأها التعلم الآلي تتم من خلال التعلم الخاضع للإشراف.|economic value created by machine learning is through supervised learning.
+أه ولكن هناك حالات استخدام مهمة للتعلم غير الخاضع للإشراف أيضًا.|Uh, but there are important use cases for unsupervised learning as well.
+لذلك أستخدمها في عملي من حين لآخر.|So I use them in my work occasionally.
+أه ، وهي أيضًا ميزة نزيف للعديد من الأبحاث المثيرة.|Uh, and is also a bleeding edge for a lot of exciting research.
+ثم الموضوع الأخير.|And then the final topic.
+أخيرًا ، الموضوعات الخمسة التي غطيناها.|Finally, the five topics we covered.
+لذا تحدث عن التعلم الخاضع للإشراف ، وإستراتيجية التعلم الآلي ، والتعلم|So talk about supervised learning, machine learning strategy,
+العميق ، والتعلم غير الخاضع للإشراف ،|deep learning, unsupervised learning,
+ثم الخطوة الخامسة هي التعلم المعزز ، هو هذا.|and then the fifth one is reinforcement learning, is this.
+وهو ، دعنا نقول ، أعطيك مفاتيح مروحية ستانفورد المستقلة.|Which is, um, let's say, I give you the keys to Stanford autonomous helicopter.
+هذه المروحية موجودة بالفعل في مكتبي|This helicopter is actually sitting in my office,
+، وأنا أحاول معرفة كيفية التخلص منها.|and I'm trying to figure out how to get rid of it.
+أممم ، وسأطلب منك كتابة برنامج لجعله يطير ، أليس كذلك؟|Um, and I'll ask you to write a program to- to make it fly, right?
+اذن كيف تفعل ذلك؟|So how do you do that?
+اممم ، هذا فيديو لطائرة هليكوبتر تحلق.|Um, so this is a video of a helicopter flying.
+الصوت هو مجرد الكثير من ضوضاء طائرات الهليكوبتر.  لذلك هذا ليس مهمًا.|The audio is just a lot of helicopter noise. So that's not important.
+لكننا سنقوم بتصغير الفيديو.|But we'll zoom out the video.
+ترى أنها وجدت في السماء ، أليس كذلك؟|You see she's found in the sky, right?
+هناك.  لذا ، يمكنك استخدام التعلم alg- هذا رائع نوعًا ما ، أليس كذلك؟|There. So, um, you can use learning alg- that's kinda cool, right?
+[ضحك] كنت - كنت المصور في ذلك اليوم.|[LAUGHTER] I was- I was the camera man that day.
+حسنًا ، ولكن يمكنك استخدام خوارزميات التعلم للحصول ،|Um, but so you can use learning algorithms to get,
+كما تعلم ، على الروبوتات للقيام بأشياء شيقة جدًا مثل هذه.|you know, robots to do pretty interesting things like this.
+أم ، واتضح أن الطريقة الجيدة للقيام بذلك هي من خلال التعلم المعزز.|Um, and it turns out that a good way to do this is through reinforcement learning.
+إذن ما هو التعلم المعزز؟|So what's reinforcement learning?
+اممم ، اتضح أن لا أحد يعرف ما هي الطريقة المثلى لقيادة طائرة هليكوبتر ، أليس كذلك؟|Um, it turns out that no one knows what's the optimal way to fly a helicopter, right?
+إذا كنت تقود طائرة هليكوبتر ،|If you fly a helicopter,
+فلديك عصا تحكم تقوم بتحريكها.|you have two control sticks that you're moving.
+اممم ، ولكن لا أحد يعرف ما هي الطريقة المثلى لتحريك عصا التحكم.|Um, but no one knows what's the optimal way to move the control stick.
+لذا فإن الطريقة التي يمكنك بها الحصول على طائرة هليكوبتر تطير بنفسها هي ،|So the way you can get a helicopter fly itself is, um,
+دع المروحية تفعل أي شيء - فكر في هذا كتدريب كلب ، أليس كذلك؟|let the helicopter do whatever- think of this as training a dog, right?
+لا يمكنك تعليم الكلب الطريقة المثلى للتصرف ،|You can't teach a dog the optimal way to behave,
+ولكن - في الواقع ، كم منكم قد امتلك كلبًا أليفًا أو قطًا أليفًا من قبل؟|but- actually, how many of you have had a pet dog or pet cat before?
+أوه ، ليس الكثير منكم.  هذا رائع.|Oh, not that many of you. This is fascinating.
+تمام.  لذلك كان لدي كلب أليف عندما كنت طفلاً|Okay. So I had a pet dog when I was a kid
+، وجعلت عائلتي وظيفتي تدريب الكلب.  فكيف تقوم بتدريب كلب؟|and my family made it my job to train the dog. So how do you train a dog?
+تترك الكلب يفعل ما يشاء|You let the dog do whatever it wants,
+، وعندما يتصرف بشكل جيد|and then whenever it behaves well,
+، تقول "أوه ، كلب جيد".|you go, "Oh, good dog".
+وعندما يسيء التصرف تذهب ، "كلب سيء".|And when it misbehaves you go, "bad dog".
+[ضحك] أممم ، وبعد ذلك بمرور الوقت|[LAUGHTER] Um, and then over time,
+، يتعلم الكلب أن يفعل المزيد من الأشياء الجيدة للكلاب وأقل من الأشياء السيئة للكلاب|the dog learns to do more of the good dog things and fewer of the bad dog things,
+، وبالتالي فإن التعلم المعزز يشبه ذلك إلى حد ما ، أليس كذلك؟|and so reinforcement learning is a bit like that, right?
+لا أعرف ما هي الطريقة المثلى لقيادة طائرة هليكوبتر.|I don't know what's the optimal way to fly a helicopter.
+لذلك تركت المروحية تفعل ما تشاء وبعد ذلك كلما تطير جيدًا ، كما تعلم ،|So you let the helicopter do whatever it wants and then whenever it flies well, you know,
+تقوم ببعض المناورة التي تريدها ، أو تطير بدقة دون أن تتنقل كثيرًا|does some maneuver you want, or flies accurately without jetting around too much,
+، فتقول ، "أوه ، مروحية جيدة".|you go, "Oh, good helicopter".
+[ضحك] وعندما تتحطم تذهب ،|[LAUGHTER] And when it crashes you go,
+"مروحية سيئة" وهي مهمة|"bad helicopter" and it's the job of
+خوارزميات التعلم المعزز لمعرفة كيفية|the reinforcement learning algorithms to figure out how to
+التحكم فيها بمرور الوقت للحصول على المزيد|control it over time so as to get more of
+من أشياء الهليكوبتر الجيدة وعدد أقل من أشياء الهليكوبتر السيئة.|the good helicopter things and fewer of the bad helicopter things.
+اممم ، وأعتقد|Um, and I think,
+، حسنًا ، مقطع فيديو واحد فقط.|um, well, just one more video.
+اممم أوه ، نعم ، هذا مثير للاهتمام.  حسنا.|Um, oh, yeah, that's interesting. All right.
+ومرة أخرى ، بالنظر إلى روبوت مثل هذا ،|And so again given a robot like this,
+فأنا في الواقع لا أعرف كيف أبرمج أ- في|I actually don't know how to program a- actually
+الواقع روبوت مثل هذا لديه الكثير من المفاصل ، أليس كذلك؟|a robot like this has a lot of joints, right?
+إذن كيف يمكنك الحصول على روبوت مثل هذا لتخطي العوائق؟|So how do you get a robot like this to climb over obstacles?
+حسنًا ، هذا في الواقع كلب آلي ،|So well, this is actually a robot dog,
+لذا يمكنك في الواقع أن تقول ،|so you can actually say,
+"كلب جيد" أو "كلب سيء".|"Good dog" or "Bad dog".
+[ضحك] من خلال إعطاء هذه الإشارات ، التي|[LAUGHTER] By giving those signals,
+تسمى إشارة المكافأة ، أه ،|called a reward signal, uh,
+يمكنك الحصول على خوارزمية تعليمية تكتشف بنفسها ،|you can have a learning algorithm figure out by itself,
+كيفية تحسين المكافأة|how to optimize the reward,
+، وبالتالي ، [ضحك] تسلق هذه الأنواع من العقبات.|and therefore, [LAUGHTER] climb over these types of obstacles.
+أم ، وأعتقد مؤخرًا ،|Um, and I think recently,
+أن أشهر تطبيقات التعلم المعزز حدثت لممارسة|the most famous applications of reinforcement learning happened for game-playing,
+الألعاب أو لعب ألعاب أتاري أو اللعب ،|playing Atari games or playing,
+كما تعلم ، Game of Go ، مثل AlphaGo.|you know, Game of Go, like AlphaGo.
+أعتقد أن هذا - أعتقد أن هذه اللعبة - جعلت بعض الأعمال المثيرة|I think that's a- I think that is a- game playing has made some remarkable stunts a
+الرائعة من العلاقات العامة الرائعة ولكني أيضًا متحمس بنفس القدر أو ربما|remarkable PR but I'm also equally excited or maybe
+أكثر حماسة بشأن التكاملات والتعلم المعزز|even more excited about the integrals and reinforcement learning is making
+في تطبيقات الروبوتات ، أليس كذلك؟|into robotics applications, right?
+لذلك أعتقد ، نعم ، أعتقد - نعم ،|So I think, um, I think- yeah,
+لقد ثبت أن التعلم المعزز رائع في ممارسة|reinforcement learning has been proven to be fantastic at playing
+الألعاب ، كما أنه يحصل على قوة دفع حقيقية|games, it's also getting- making real traction
+في تحسين الروبوتات وتحسين نوع من النظام اللوجستي وأشياء من هذا القبيل.|in optimizing robots and optimizing sort of logistic system and things like that.
+اممم ، لذلك تعلمت عن كل هذه الأشياء.|Um, so you learned about all these things.
+اممم ، آخر شيء لهذا اليوم ، أه ،|Um, last thing for today, uh,
+آمل أن تبدأ في مقابلة أشخاص في الفصل ،|I hope that you will start to, to meet people in the class,
+وتكوين صداقات ، والعثور على شركاء المشروع ومجموعات الدراسة|make friends, find project partners and study groups,
+، وإذا كان لديك أي أسئلة ، [ضوضاء] كما تعلم ،|and if you have any questions, [NOISE] you know,
+غوص في  ساحة لطرح الأسئلة وأنت تساعد الآخرين في الإجابة على أسئلتهم.|dive on the Piazza, asking questions as you help others answer their questions.
+لذلك دعونا نستريح لهذا اليوم ، وأنا أتطلع إلى رؤيتكم يوم الأربعاء.|So let's break for today, and I look forward to seeing you on Wednesday.
+مرحبًا بك في 229.|Welcome to 229. 
